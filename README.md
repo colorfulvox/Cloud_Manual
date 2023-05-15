@@ -1,5 +1,5 @@
 # Cloud_Manual
-AWS기반 클라우드 구축 매뉴얼
+AWS기반 클라우드 서버 구축 매뉴얼
 
 1. EC2 구축
 2. Docker
