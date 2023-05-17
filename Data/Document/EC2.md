@@ -66,7 +66,7 @@ EBS 기반 : EBS와 EBS 볼륨이 네크워크로 연결되어 분리 되어있�
 인스턴스 저장 기반 : 인스턴스 저장소에 저장 되어 있음 (속도가 빠름 단, 인스턴스가 삭제되면 같이 삭제됨) <br>[S3에 저장된 템플릿을 기반으로 생성]<br>
 
 AMI 생성 과정<br>
-![img](../Img/AMI.png)
+![img](../Img/AMI.png)<br>
 
 ## EC2 생성하기
 
@@ -76,17 +76,17 @@ AMI 생성 과정<br>
 ![img](../Img/instance1.png)<br>
 
 (2) 이름 작성 및 키페어 생성<br>
-![img](../Img/EC21.png)
-![img](../Img/EC22.png)
-![img](../Img/EC23.png)
-![img](../Img/EC24.png)
+![img](../Img/EC21.png)<br>
+![img](../Img/EC22.png)<br>
+![img](../Img/EC23.png)<br>
+![img](../Img/EC24.png)<br>
 (키 페어는 잃어버리면 안된다.)<br><br>
-![img](../Img/EC5.png)
+![img](../Img/EC5.png)<br>
 (EBS 관련 정보 일단 이대로 둔다.)<br><br>
 (3) 인스턴스 시작 및 확인<br>
-![img](../Img/EC6.png)
-![img](../Img/EC7.png)
-![img](../Img/EC8.png)
-![img](../Img/EC9.png)
+![img](../Img/EC6.png)<br>
+![img](../Img/EC7.png)<br>
+![img](../Img/EC8.png)<br>
+![img](../Img/EC9.png)<br>
 
 ## [윈도우 터미널로 접속하기](./%ED%84%B0%EB%AF%B8%EB%84%90.md)
