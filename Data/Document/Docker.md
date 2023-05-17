@@ -1,3 +1,5 @@
+[뒤로가기](../../README.md)
+
 # 도커
 
 컨테이너 기반 오픈소스 가상화 플랫폼 <br>
@@ -18,14 +20,14 @@
 
 (1) 설치 <br>
 curl -fsSL https://get.docker.com/ | sudo sh <br>
-![img](../Img/docker1.png)
-![img](../Img/docker2.png)
+![img](../Img/docker1.png)<br>
+![img](../Img/docker2.png)<br>
 (설치 확인)<br>
 
 (2) 명령어<br>
 docker run [OPTIONS] IMAGE[:TAG|@DIGEST] [COMMAND] [ARG...]<br>
 (OPTIONS)<br>
-![img](../Img/docker3.png)
+![img](../Img/docker3.png)<br>
 
 (3) 우분투 컨테이너 생성<br>
 docker run ubuntu:16.04<br>
@@ -35,7 +37,7 @@ run 명령어는 사용할 이미지가 저장되어 있는지 확인하고 없�
 지금은 생성이 되었지만 별다른 명령어가 없어 자동으로 종료된다.<br>
 
 (4) 컨테이너 실행<br>
-docker run --rm -it ubuntu:16.04 /bin/bash
+docker run --rm -it ubuntu:16.04 /bin/bash<br>
 ![img](../Img/docker5.png)<br>
 
 (5) centos 이미지 풀<br>
