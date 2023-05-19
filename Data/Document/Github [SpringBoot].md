@@ -1,9 +1,9 @@
-[뒤로가기](../../README.md)
+[뒤로가기](../../README.md)<br>
 
 # Github [SpringBoot]
 
 Github에서 SpringBoot 프로젝트를 clone한뒤
-우분투 환경에서 빌드해 서버 배포
+우분투 환경에서 빌드해 서버 배포<br>
 
 ## 구성도
 
@@ -13,8 +13,7 @@ Github에서 SpringBoot 프로젝트를 clone한뒤
 
 1. AWS EC2 Ubuntu 생성 및 환경 설정 [AWS EC2 생성](../Document/EC2.md)
 2. Springboot 프로젝트 생성 [SpringBoot 프로젝트 생성](../Document/Local%20%5BSpringBoot%5D.md)
-3. SpringBoot 프로젝트 Github에 저장
-4. 우분투에 openjdk17이 설치됨
+3. SpringBoot 프로젝트 Github에 저장 [여기서는 github_demo 브랜치를 사용함]
 
 ## 환경
 
@@ -25,8 +24,7 @@ VSCode<br>
 2. Extension Pack for Java
 3. Gradle for Java
 
-EC2 - Ubuntu (AWS EC2 생성 과정 참조)<br>
-[EC2](../Document/EC2.md)
+EC2 - Ubuntu (AWS EC2 생성 과정 참조) [EC2](../Document/EC2.md)
 
 ## 시작
 
@@ -72,10 +70,22 @@ EC2 - Ubuntu (AWS EC2 생성 과정 참조)<br>
 (다음과 같이 입력)<br>
 단, PROJECT 경로와 파일명은 본인의 프로젝트 경로에 맞춰 작성<br>
 
+![img](../Img/github18.png)<br>
+(쉘스크립 실행)<br>
+
 ![img](../Img/github12.png)<br>
 ![img](../Img/github13.png)<br>
-(스크립트 실행 및 결과 확인)<br>
+(결과 확인)<br>
 
 ## [테스트]
 
 github에 저장된 springboot프로젝트를 수정한뒤 Pull 받아 결과 확인하기
+
+![img](../Img/github14.png)<br>
+(springboot프로젝트에서 body부분 변경)<br>
+![img](../Img/github15.png)<br>
+(github에 커밋 후 동기화)<br>
+![img](../Img/github16.png)<br>
+(다시 우분투로 가서 쉘스크립트 실행)<br>
+![img](../Img/github17.png)<br>
+(결과 확인)<br>
