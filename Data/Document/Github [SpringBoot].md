@@ -2,8 +2,8 @@
 
 # Github [SpringBoot]
 
-Github에서 SpringBoot 프로젝트를 pull받아
-우분투 환경에서 빌드한뒤 서버 배포
+Github에서 SpringBoot 프로젝트를 clone한뒤
+우분투 환경에서 빌드해 서버 배포
 
 ## 구성도
 
@@ -61,3 +61,21 @@ EC2 - Ubuntu (AWS EC2 생성 과정 참조)<br>
 ### (6) 서버 실행 및 확인
 
 ![img](../Img/github8.png)<br>
+![img](../Img/github9.png)<br>
+
+### (7) 빌드 과정 Bash로 수행하기
+
+![img](../Img/github10.png)<br>
+(bash 쉘 스크립트 생성)
+
+![img](../Img/github11.png)<br>
+(다음과 같이 입력)<br>
+단, PROJECT 경로와 파일명은 본인의 프로젝트 경로에 맞춰 작성<br>
+
+![img](../Img/github12.png)<br>
+![img](../Img/github13.png)<br>
+(스크립트 실행 및 결과 확인)<br>
+
+## [테스트]
+
+github에 저장된 springboot프로젝트를 수정한뒤 Pull 받아 결과 확인하기
