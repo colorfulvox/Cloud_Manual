@@ -2,7 +2,7 @@
 
 # Local [SpringBoot]
 
-LocalPC에서 SpringBoot 프로젝트를 빌드한뒤 해당 파일을 EC2에 전송시켜 서버를 배포하는 방식
+LocalPC에서 SpringBoot 프로젝트를 빌드한뒤 해당 파일을 EC2에 전송시켜 서버 배포
 
 ## 구성도
 

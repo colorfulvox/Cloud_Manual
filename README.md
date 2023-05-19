@@ -7,7 +7,7 @@
    (3) [윈도우 터미널로 접속](./Data/Document/%ED%84%B0%EB%AF%B8%EB%84%90.md)<br>
 3. CI/CD<br>
    (1) [Local [SrpingBoot]](./Data/Document/Local%20%5BSpringBoot%5D.md)<br>
-   (2) [Github + Springboot](./Data/Document/git%2Bspringboot.md)<br>
+   (2) [Github + BashScript [Springboot]](./Data/Document/Github%20%5BSpringBoot%5D.md)<br>
 
 4. [Docker](./Data/Document/Docker.md)
 5. Jenkins
