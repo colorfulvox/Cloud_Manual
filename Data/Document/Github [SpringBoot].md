@@ -40,7 +40,7 @@ EC2 - Ubuntu (AWS EC2 생성 과정 참조) [EC2](../Document/EC2.md)
 ### (3) git clone 받기
 
 ![img](../Img/github4.png)<br>
-(프로젝트가 있으면 clone을 받고 여기서는 샘플 프로젝트 브랜치로 이동함)<br>
+(프로젝트가 있으면 clone을 받고 여기서는 github_demo 브랜치를 사용함)<br>
 
 ### (4) gradlew 사용 권한
 
