@@ -45,7 +45,8 @@ EC2 - Ubuntu (AWS EC2 생성 과정 참조) [EC2](../Document/EC2.md)
 ### (4) gradlew 사용 권한
 
 ![img](../Img/github5.png)<br>
-(chmod +x gradlew 를 입력해 사용 권한을 받음)<br>
+(프로젝트 폴더로 이동한 뒤<br>
+chmod +x gradlew 를 입력해 사용 권한을 받음)<br>
 
 ### (5) gradlew 빌드
 
