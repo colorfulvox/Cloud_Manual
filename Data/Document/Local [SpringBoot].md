@@ -141,7 +141,7 @@ scp -i [pem파일경로] [업로드할 파일 이름] [ec2-user계정명]@[ec2 i
 "[ec2-user계정명]@[ec2 instance의 public DNS]" 해당 부분은 인스턴스 연결의 SSH 클라이언트의 예시를 참고<br>
 (해당 명령어에 맞춰 입력)<br>
 ![img](../Img/local35.png)<br>
-(다시 우분투로 돌아가 ls 명령어로 옮겨졌는지 확인)
+(다시 우분투로 돌아가 ls 명령어로 옮겨졌는지 확인)<br>
 ![img](../Img/local36.png)<br>
 (java -jar 파일이름.jar 명령어로 실행)<br>
 ![img](../Img/local37.png)<br>
