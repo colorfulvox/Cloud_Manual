@@ -19,7 +19,7 @@ dependencies {
 
 bootJar{
 	archivesBaseName='dockerdemo'
-	archiveFileName='docerdemo.jar'
+	archiveFileName='dockerdemo.jar'
 	archiveVersion='0.0.0'
 }
 
