@@ -1,6 +1,6 @@
 [뒤로가기](../../README.md)
 
-# 도커
+# Docker
 
 컨테이너 기반 오픈소스 가상화 플랫폼 <br>
 다양한 프로그램, 실행 환경을 컨테이너로 추상화하고 동일한 인터페이스를 제공하여 <br>프로그램의 배포 및 관리를 단순하게 해준다.<br>
@@ -16,7 +16,7 @@
 컨네이너 : 격리된 공간에서 프로세스가 동작하는 기술<br>
 이미지 : 컨테이너 실행에 필요한 파일과 설정값을 포함한 것<br>
 
-## 도커 설치
+## Docker 설치
 
 (1) 설치 <br>
 curl -fsSL https://get.docker.com/ | sudo sh <br>
@@ -63,11 +63,11 @@ sudo su - $USER<br>
 docker rm 컨테이너 tag or id //컨테이너 삭제
 dokcer rmi tag or id //이미지 삭제
 
-## 도커 허브
+## Docker Hub
 
 자신이 만든 도커 이미지를 저장할 수 있는 클라우드 저장소<br>
 
-### [도커허브](https://hub.docker.com/)
+### [Docker Hub](https://hub.docker.com/)
 
 (1) 회원가입 생략<br>
 (2) 저장소 생성<br>
