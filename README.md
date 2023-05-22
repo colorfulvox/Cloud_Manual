@@ -5,10 +5,13 @@
    (1) [AWS 계정 설정](./Data/Document/AWSaccount.md)<br>
    (2) [EC2 생성 방법](./Data/Document/EC2.md)<br>
    (3) [윈도우 터미널로 접속](./Data/Document/%ED%84%B0%EB%AF%B8%EB%84%90.md)<br>
-3. CI/CD<br>
+
+3. [Docker](./Data/Document/Docker.md)
+4. [Jenkins](./Data/Document/Jenkins.md)
+5. K8s
+
+6. CI/CD<br>
    (1) [Local [SrpingBoot]](./Data/Document/Local%20%5BSpringBoot%5D.md)<br>
    (2) [Github + BashScript [Springboot]](./Data/Document/Github%20%5BSpringBoot%5D.md)<br>
    (3) [Docker [SpringBoot]](./Data/Document/Docker%20%5BSpringboot%5D.md)<br>
-4. [Docker](./Data/Document/Docker.md)
-5. Jenkins
-6. K8s
+   (4) [Jenkins [SpringBoot]](./Data/Document/Jenkins%20%5BSpringBooot%5D.md)<br>
