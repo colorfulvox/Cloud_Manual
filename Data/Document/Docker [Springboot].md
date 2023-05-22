@@ -36,3 +36,11 @@ EC2 - Ubuntu (AWS EC2 생성 과정 참조) [EC2](../Document/EC2.md)
 
 ![img](../Img/dockerdemo2.png)<br>
 (Dockerfile에 다음과 같이 입력 단, 빌드 파일 이름은 본인이 빌드한 파일 이름으로 작성)<br>
+
+### (2) git clone 받기
+
+![img](../Img/dockerdemo3.png)<br>
+
+### (3) gradlew 빌드
+
+![img](../Img/dockerdemo4.png)<br>
