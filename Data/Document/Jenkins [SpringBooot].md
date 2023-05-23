@@ -252,7 +252,7 @@ WAS 서버의 해당 경로에 publish.sh가 있어야됨<br>
 
 작성후 저장<br>
 
-### (2) was 서버에 publish.sh 스크립트 작성
+### (2) WAS 서버에 publish.sh 스크립트 작성
 
 ![img](../Img/jenkinsprj43.png)<br>
 (publish.sh 스크립트 생성)<br>
