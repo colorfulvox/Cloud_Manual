@@ -58,6 +58,21 @@ ssh-keygen -t rsa -f /var/lib/jenkins/.ssh/github_ansible-in-action<br>
 ![img](../Img/jenkinsprj8.png)<br>
 ( "cat 생성된 키.pub" 를 입력해서 키 값을 복사)<br>
 
+---
+
+### [주의사항] jenkins 계정 패스워드 관련
+
+![img](../Img/jenkinspass1.png)<br>
+(만약 다음과 같이 비밀번호를 입력하라고 나온다면)<br>
+
+![img](../Img/jenkinspass2.png)<br>
+(일단 exit를 입력해 root계정으로 돌아간다.)<br>
+
+![img](../Img/jenkinspass3.png)<br>
+(sudo passwd jenkins를 입력후 패스워드를 새로 입력한뒤 다시 접속한다.)<br>
+
+---
+
 ![img](../Img/jenkinsprj6.png)<br>
 (연동할 프로젝트의 Settings로 이동)<br>
 
@@ -219,7 +234,10 @@ WAS 서버의 해당 경로에 publish.sh가 있어야됨<br>
 ### (1) was 서버에 publish.sh 스크립트 작성
 
 ![img](../Img/jenkinsprj43.png)<br>
-(publish.sh 스크립트 생성)
+(publish.sh 스크립트 생성)<br>
+
+![img](../Img/jenkinsprj45.png)<br>
+(publish.sh의 실행 권한을 활성화 한다.)<br>
 
 ![img](../Img/jenkinsprj44.png)<br>
 (다음과 같이 입력후 저장) [shell 작성법](../Document/Github%20%5BSpringBoot%5D.md)

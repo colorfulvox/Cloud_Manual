@@ -39,6 +39,8 @@ echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \\\
 
 ![img](../Img/jenkins5.png)<br>
 
+[참고] [설치가 느릴겨우](../Document/Linux.md)
+
 ### (6) 설치 확인
 
 ![img](../Img/jenkins6.png)<br>
