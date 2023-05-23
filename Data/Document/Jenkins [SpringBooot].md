@@ -14,11 +14,20 @@ WAS서버에 빌드 파일을 전달해 서버 배포 <br>
 1. AWS EC2 Ubuntu 생성 및 환경 설정 [AWS EC2 생성](../Document/EC2.md)
 2. Springboot 프로젝트 생성 [SpringBoot 프로젝트 생성](../Document/Local%20%5BSpringBoot%5D.md)
 3. SpringBoot 프로젝트 Github에 저장
-4. Jenkins 설치 완료 [Jenkins 설치](../Document/Jenkins.md)
+4. Jenkins 설치 완료 [Jenkins 설치](../Document/Jenkins.md)<br>
+
+---
+
+[주의사항]<br>
+현재 실습용 SpringBoot 프로젝트 자바 버전은 openjdk17이다.<br>
+Jenkins서버에서 프로젝트를 빌드할시 openjdk17를 사용한다.<br>
+본인 SpringBoot 프로젝트에 맞춰 자바 버전을 설치 해야된다.<br>
+
+---
 
 ## 환경
 
-1. Jenkins 서버용 EC2
+1. Jenkins 서버용 EC2 [Java SE-17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)<br>
 2. WAS 서버용 EC2
    [Java SE-17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)<br>
 3. VSCode<br>
@@ -180,6 +189,8 @@ Build폴더자체가 생성되지 않음)<br>
 Jenkins서버에서 빌드한 jar파일을 publish over ssh 플러그인을
 활용하여 WAS 서버에 전달해 배포<br>
 
+### (1) publish over ssh 설정
+
 ![img](../Img/jenkinsprj34.png)<br>
 (플러그인에서 publish over ssh 설치)<br>
 
@@ -208,11 +219,21 @@ Remote Directory : WAS서버에 접속하면 수행할 폴더 장소<br>
 
 ![img](../Img/jenkinsprj39.png)<br>
 (내려보면 Build Steps 항목이 있음<br>
-Add build step을 눌러 Invoke Gradle script 클릭)<br>
+Add build step을 눌러 Execute shell 클릭)<br>
 
 ![img](../Img/jenkinsprj40.png)<br>
-(현재 Springboot 프로젝트내에 gradle Wrapper가 있기때문에<br>
-Use Gradle Wrapper를 클릭하고 Tasks에서 clean build 입력)<br>
+
+> chmod +x gradlew
+
+(gradlew 사용 권한을 주기 위해 입력)<br>
+
+![img](../Img/jenkinsprj54.png)<br>
+(Invoke Gradle script도 찾아 추가한뒤<br>
+Use Gradle Wrapper를 체크 : 현재 Springboot 프로젝트내에 gradle Wrapper가 있음<br>
+그리고 각 tasks에 clean, build 입력)<br>
+
+굳이 이렇게 나눠놓는 이유 : Ec2 프리티어가 느려서 명령어 수행을
+순차적으로 수행하기 위해 구성<br>
 
 ![img](../Img/jenkinsprj41.png)<br>
 (빌드 후 조치에서 "Send build artifacts over SSH"를 클릭)
@@ -231,7 +252,7 @@ WAS 서버의 해당 경로에 publish.sh가 있어야됨<br>
 
 작성후 저장<br>
 
-### (1) was 서버에 publish.sh 스크립트 작성
+### (2) was 서버에 publish.sh 스크립트 작성
 
 ![img](../Img/jenkinsprj43.png)<br>
 (publish.sh 스크립트 생성)<br>
@@ -242,4 +263,60 @@ WAS 서버의 해당 경로에 publish.sh가 있어야됨<br>
 ![img](../Img/jenkinsprj44.png)<br>
 (다음과 같이 입력후 저장) [shell 작성법](../Document/Github%20%5BSpringBoot%5D.md)
 
+---
+
+### [주의사항]
+
+SSH로 원격 스크립트를 실행하게 되면
+stdoutput이 닫히거나 timeout이 발생할때까지 스크립트가 닫히지 않는다.<br>
+그래서 마지막에 배포할때
+\> /dev/null : stdout 출력을 기록하지 않게 /dev/null로 이동<br>
+2>&1 : stderr도 stdout으로 이동시켜
+모든 output을 redirect해준다.<br>
+
+---
+
+<br>
+
 ### (2) 빌드 테스트
+
+---
+
+### [주의사항]
+
+Jenkins 서버는 Ec2 프리 티어 서버여서 속도가 매우 느리다.<br>
+그래서 빌드시 CPU 과부하로 시스템이 멈추는 현상이 발생한다.<br>
+[프리티어 속도 높이기](../Document/Linux.md)
+<br>
+
+---
+
+![img](../Img/jenkinsprj46.png)<br>
+(다음과 같이 느낌표로 unstable 상태이긴 하지만)<br>
+
+![img](../Img/jenkinsprj47.png)<br>
+(정상적으로 서버가 배포 되었다.)<br>
+
+unstable 상태인 이유는<br>
+![img](../Img/jenkinsprj48.png)<br>
+jar 파일을 전송할때 시간 초과가 나기 때문이다.<br>
+
+![img](../Img/jenkinsprj49.png)<br>
+(빌드 후 조치로 다시 가서 파일을 전송하는 부분에 고급을 클릭한다.)<br>
+
+![img](../Img/jenkinsprj50.png)<br>
+(120000 -> 0 으로 변경해 무제한으로 설정하고 저장한다.)<br>
+
+![img](../Img/jenkinsprj51.png)<br>
+(정상적으로 배포가 되는것을 볼 수 있다.)<br>
+
+## 최종 테스트
+
+springboot 프로젝트에서 변경 사항이 생길 경우 자동으로
+배포가 되야한다.<br>
+
+![img](../Img/jenkinsprj55.png)<br>
+(코드를 변경하고 커밋을 해보자.)<br>
+
+![img](../Img/jenkinsprj56.png)<br>
+(잘되는 것을 볼 수 있다.)<br>
