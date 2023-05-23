@@ -57,7 +57,7 @@ Jenkins가 반응하여 처리를 하도록 구현한다.<br>
 (/var/lib/jenkins 경로에 .ssh폴더 생성 및 이동)
 
 ![img](../Img/jenkinsprj5.png)<br>
-ssh-keygen -t rsa -f /var/lib/jenkins/.ssh/github_ansible-in-action<br>
+ssh-keygen -t rsa <br>
 (해당 명령어로 ssh키 생성 및 비밀번호는 모두 엔터,
 설치가 되었는지 확인
 )<br><br>
