@@ -16,3 +16,5 @@
    (3) [Docker [SpringBoot]](./Data/Document/Docker%20%5BSpringboot%5D.md)<br>
    (4) [Jenkins [SpringBoot]](./Data/Document/Jenkins%20%5BSpringBooot%5D.md)<br>
    (5) [Jenkins + Docker [SpringBoot]](./Data/Document/Jenkins%2BDocker%20%5BSpringBoot%5D.md)<br>
+
+[Linux 팁](./Data/Document/Linux.md)
