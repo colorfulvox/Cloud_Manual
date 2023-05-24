@@ -31,7 +31,7 @@ docker run [OPTIONS] IMAGE[:TAG|@DIGEST] [COMMAND] [ARG...]<br>
 
 (3) 우분투 컨테이너 생성<br>
 docker run ubuntu:16.04<br>
-![img](../Img/docker4.png)
+![img](../Img/docker4.png)<br>
 run 명령어는 사용할 이미지가 저장되어 있는지 확인하고 없다면 설치한 후<br>
 컨테이너를 생성하고 시작해줌<br>
 지금은 생성이 되었지만 별다른 명령어가 없어 자동으로 종료된다.<br>
