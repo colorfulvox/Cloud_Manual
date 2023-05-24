@@ -29,9 +29,8 @@ sources.list 진입<br>
 > sudo swapon -s<br>
 
 > sudo vi /etc/fstab <br>
-> /swapfile swap swap defaults 0 0
 
-(마지막 줄에 입력)<br>
+/swapfile swap swap defaults 0 0 을 마지막 줄에 입력<br>
 
 > free
 
