@@ -18,44 +18,108 @@
 
 ## Docker 설치
 
-(1) 설치 <br>
-curl -fsSL https://get.docker.com/ | sudo sh <br>
+(0) 필수 패키지 설치
+
 ![img](../Img/docker1.png)<br>
+
+> sudo apt-get update
+
+(패키지 업데이트부터 해주자)
+
 ![img](../Img/docker2.png)<br>
-(설치 확인)<br>
 
-(2) 명령어<br>
-docker run [OPTIONS] IMAGE[:TAG|@DIGEST] [COMMAND] [ARG...]<br>
-(OPTIONS)<br>
-![img](../Img/docker3.png)<br>
+> sudo apt-get install -y \\<br>
+> ca-certificates \\<br>
+> curl \\<br>
+> gnupg \\<br>
+> lsb-release
 
-(3) 우분투 컨테이너 생성<br>
+(필수 패키지 설치)<br>
+ca-certificates : certificate authority에서 발행되는 디지털 서명으로 SSL 인증서의 PEM파일이 포함되어 있어 SSL 기반 앱이
+SSL 연결이 되었는지 확인 할 수 있다.<br>
+curl : 웹사이트에서 파일을 다운 받을때 사용한다.<br>
+gnupg : 데이터를 암호화하고 정보 보안에 쓰이는 디지털 서명을 생성하는데 사용되는 GNU 도구<br>
+lsb-release : 리눅스의 상세 정보를 출력하는 리눅스 명령어<br>
+
+![img](../Img/docker12.png)<br>
+
+> curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
+(Docker GPG Key 추가)
+
+![img](../Img/docker13.png)<br>
+
+echo \\<br>
+"deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \\<br>
+\$(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null<br>
+
+(apt로 Docker를 설치 하기위해 Docker stable 레파지토리를 추가
+여기서 환경에 따라 명령어가 다르다.)
+
+---
+
+[x86_64/amd64]<br>
+echo \\<br>
+"deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \\<br>
+\$(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null<br>
+
+[armhf]<br>
+echo \\<br>
+"deb [arch=armhf signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \\<br>
+$(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null<br>
+
+[arm64]<br>
+echo \\<br>
+"deb [arch=arm64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \\<br>
+$(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+---
+
+![img](../Img/docker1.png)<br>
+
+> sudo apt-get update
+
+(다시 패키지 업데이트)
+
+![img](../Img/docker14.png)<br>
+
+> sudo apt-get install -y docker-ce docker-ce-cli containerd.io
+
+(도커 설치)
+
+(2) 우분투 컨테이너 생성<br>
 docker run ubuntu:16.04<br>
 ![img](../Img/docker4.png)<br>
 run 명령어는 사용할 이미지가 저장되어 있는지 확인하고 없다면 설치한 후<br>
 컨테이너를 생성하고 시작해줌<br>
 지금은 생성이 되었지만 별다른 명령어가 없어 자동으로 종료된다.<br>
 
-(4) 컨테이너 실행<br>
+(3) 컨테이너 실행<br>
 docker run --rm -it ubuntu:16.04 /bin/bash<br>
 ![img](../Img/docker5.png)<br>
 
-(5) centos 이미지 풀<br>
+(4) centos 이미지 풀<br>
 ![img](../Img/docker6.png)<br>
 ![img](../Img/docker7.png)<br>
 (현재 이미지 확인)<br>
 
-(6) Dockerfile로 이미지 만들기<br>
+(5) Dockerfile로 이미지 만들기<br>
 ![img](../Img/docker8.png)<br>
 (폴더 생성 뒤 Dockerfile 생성한 후 vi 작성)<br>
 ![img](../Img/docker9.png)<br>
 ubuntu:16.04 이미지를 생성하고 update한뒤 git을 설치하라<br>
 
 ![img](../Img/docker10.png)<br>
-그 외 명령어<br>
+
+## [명령어]<br>
+
+docker run [OPTIONS] IMAGE[:TAG|@DIGEST] [COMMAND] [ARG...]<br>
+(OPTIONS)<br>
+![img](../Img/docker3.png)<br>
 
 docker ps // 실행중인 컨테이너 목록<br>
 docker images //이미지 확인<br>
+
 /- docker 그룹에 사용자 추가 -/<br>
 sudo usermod -aG docker $USER<br>
 sudo su - $USER<br>
