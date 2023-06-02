@@ -2,7 +2,8 @@
 
 # AWS
 
-(AWS 강의실 영상을 참고해 정리함 )<br>
+[AWS 강의실](https://www.youtube.com/@AWSClassroom)
+(AWS 강의실 영상을 참고해 정리함)<br>
 
 200개가 넘는 데이터센터로 완벽한 기능의 서비스를 제공하는 클라우드 플랫폼<br>
 
