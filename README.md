@@ -5,6 +5,9 @@
    (1) [AWS 계정 설정](./Data/Document/AWSaccount.md)<br>
    (2) [EC2 생성 방법](./Data/Document/EC2.md)<br>
    (3) [윈도우 터미널로 접속](./Data/Document/%ED%84%B0%EB%AF%B8%EB%84%90.md)<br>
+   (4) [EC2 이미지 복제](./EC2_Img.md)<br>
+   (5) [AutoScaling 구성](../Document/AutoScaling.md)<br>
+   (6) [ELB 구성하기](./ELB.md)<br>
 
 3. [Docker](./Data/Document/Docker.md)
 4. [Jenkins](./Data/Document/Jenkins.md)

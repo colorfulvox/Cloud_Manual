@@ -291,3 +291,5 @@ TCP 기반 빠른 트래픽 분산, Elastic IP 할당 가능
 2. Private IP
 3. Lambda
 4. ALB (다른 ALB)
+
+## [ELB 구성하기](./ELB.md)
