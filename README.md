@@ -8,6 +8,7 @@
    (4) [EC2 이미지 복제](./Data/Document/EC2_Img.md)<br>
    (5) [AutoScaling 구성](./Data/Document/AutoScaling.md)<br>
    (6) [ELB 구성하기](./Data/Document/ELB.md)<br>
+   (7) [EFS 구성하기](./Data/Document/EFS.md)
 
 3. [Docker](./Data/Document/Docker.md)
 4. [Jenkins](./Data/Document/Jenkins.md)
@@ -19,5 +20,6 @@
    (3) [Docker [SpringBoot]](./Data/Document/Docker%20%5BSpringboot%5D.md)<br>
    (4) [Jenkins [SpringBoot]](./Data/Document/Jenkins%20%5BSpringBooot%5D.md)<br>
    (5) [Jenkins + Docker [SpringBoot]](./Data/Document/Jenkins%2BDocker%20%5BSpringBoot%5D.md)<br>
+   (6) [Github Actions + Docker [SpringBoot]](./Data/Document/GithubActions%2BDocker%20%5BSpringBoot%5D.md)
 
 [Linux 팁](./Data/Document/Linux.md)
