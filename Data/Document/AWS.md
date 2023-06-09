@@ -100,7 +100,7 @@ IAM 권한 검증 과정2
 
 ### IAM 자격 증명 보고서<br>
 
-![img](../Img/IAM%EC%9E%90%EA%B2%A9%EC%A6%9D%EB%AA%85.png)
+![img](../Img/IAM%EC%9E%90%EA%B2%A9%EC%A6%9D%EB%AA%85.png)<br>
 계정의 모든 사용자, 암호, 액세스키, MFA장치등의 증명 상태를 문서화한 보고서<br>
 4시간 단위로 생성 가능하며, AWS 콘솔, CLI, API에서 생성 요청 및 다운로드 가능<br>
 
