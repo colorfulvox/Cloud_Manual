@@ -8,7 +8,8 @@
    (4) [EC2 이미지 복제](./Data/Document/EC2_Img.md)<br>
    (5) [AutoScaling 구성](./Data/Document/AutoScaling.md)<br>
    (6) [ELB 구성하기](./Data/Document/ELB.md)<br>
-   (7) [EFS 구성하기](./Data/Document/EFS.md)
+   (7) [EFS 구성하기](./Data/Document/EFS.md)<br>
+   (8) [VPC 생성](./Data/Document/VPC.md)<br>
 
 3. [Docker](./Data/Document/Docker.md)
 4. [Jenkins](./Data/Document/Jenkins.md)
