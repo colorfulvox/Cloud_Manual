@@ -12,7 +12,8 @@ Github Actions가 프로젝트 소스를 받아 Docker 이미지로 빌드한뒤
 ## 사전 세팅
 
 1. AWS EC2 Ubuntu 생성 및 환경 설정 [AWS EC2 생성](../Document/EC2.md)
-2. Springboot 프로젝트 생성 및 Dockerfile 저장 [SpringBoot 프로젝트 생성](../Document/Local%20%5BSpringBoot%5D.md) , [Dockerfile 생성](../Document/Docker%20%5BSpringBoot%5D.md)
+2. Springboot 프로젝트 생성 및 Dockerfile 저장 [SpringBoot 프로젝트 생성](../Document/Local%20%5BSpringBoot%5D.md)
+   [Dockerfile 생성](../Document/Docker%20%5BSpringBoot%5D.md)
 3. SpringBoot 프로젝트 Github에 저장
 4. ubuntu에 도커 설치 및 레파지토리 생성 [Docker 설치](../Document/Docker.md)
 
