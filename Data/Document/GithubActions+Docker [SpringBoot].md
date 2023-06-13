@@ -104,7 +104,7 @@ Github에서는 숨기고 싶은 데이터를 관리할 수 있는 기능이 있
 ![img](../Img/githubactions6.png)<br>
 (본인 프로젝트의 Settings -> Secrets and vaariables -> Action로 들어가 New repository secret으로 시크릿 데이터를 생성한다.)<br>
 
-![img](../Img/githubactions7.png)
+![img](../Img/githubactions7.png)<br>
 (DOCKER_NAME을 입력하고 컨테이너 이름을 Secret에 입력한다.
 여기서는 도커허브의 레파지토리 이름으로 했다.)<br>
 
