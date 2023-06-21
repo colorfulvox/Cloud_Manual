@@ -15,15 +15,12 @@
 ### [Ubuntu Server](https://ubuntu.com/download/server)
 
 ![img](../img/vm6.png)<br>
-
 ![img](../img/vm7.png)<br>
-
 ![img](../img/vm8.png)<br>
-
 ![img](../img/vm9.png)<br>
-
 ![img](../img/vm10.png)<br>
 
 ## 3. 시작하기
 
-![img](../img/vm11.png)<br>
+![img](../img/vm11.png)
+<br>
