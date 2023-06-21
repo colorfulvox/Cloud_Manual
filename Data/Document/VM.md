@@ -4,11 +4,11 @@
 
 ### [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 
-![img](../img/vm1.png)<br>
-![img](../img/vm2.png)<br>
-![img](../img/vm3.png)<br>
-![img](../img/vm4.png)<br>
-![img](../img/vm5.png)<br>
+![img](../Img/vm1.png)<br>
+![img](../Img/vm2.png)<br>
+![img](../Img/vm3.png)<br>
+![img](../Img/vm4.png)<br>
+![img](../Img/vm5.png)<br>
 
 ## 2. 우분투 서버 만들기
 
