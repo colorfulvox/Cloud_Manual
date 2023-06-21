@@ -14,7 +14,8 @@
 
 3. [Docker](./Data/Document/Docker.md)
 4. [Jenkins](./Data/Document/Jenkins.md)
-5. [K8s](./Data/Document/k8s.md)
+5. [K8s](./Data/Document/k8s.md)<br>
+   (1) [k8s 설치](./Data/Document/k8s%20%EC%84%A4%EC%B9%98.md)
 
 6. CI/CD<br>
    (1) [Local [SrpingBoot]](./Data/Document/Local%20%5BSpringBoot%5D.md)<br>
@@ -24,6 +25,7 @@
    (5) [Jenkins + Docker [SpringBoot]](./Data/Document/Jenkins%2BDocker%20%5BSpringBoot%5D.md)<br>
    (6) [Github Actions + Docker [SpringBoot]](./Data/Document/GithubActions%2BDocker%20%5BSpringBoot%5D.md)
 
-7. [OpenStack](./Data/Document/OpenStack.md)
+7. [OpenStack](./Data/Document/OpenStack.md)<br>
+   (1) [VM 이미지 생성하기](./Data/Document/VM.md)<br>
 
 [Linux 팁](./Data/Document/Linux.md)
