@@ -17,7 +17,7 @@
 ![img](../Img/vm6.png)<br>
 ![img](../Img/vm7.png)<br>
 ![img](../Img/vm8.png)<br>
-![img](../Img/vm9.png)<br
+![img](../Img/vm9.png)<br>
 ![img](../Img/vm10.png)<br>
 
 ## 3. 시작하기
