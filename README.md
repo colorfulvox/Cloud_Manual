@@ -28,7 +28,7 @@
 
 8. [OpenStack](./Data/Document/OpenStack.md)<br>
    (1) [VM 이미지 생성](./Data/Document/VM.md)<br>
-   (2) [VM, 서버 설정](./Data/Document/openstack-vmset.md)<br>
+   (2) [VM 서버 설정](./Data/Document/openstack-vmset.md)<br>
    (3) [Devstack 설치](./Data/Document/Devstack.md)<br>
 
 [Linux 팁](./Data/Document/Linux.md)
