@@ -7,8 +7,7 @@ master, node1, node2 3개의 가상 머신을 구성한뒤
 
 ## 환경
 
-VM 가상 머신<br>
-ubuntu - 20.04<br>
+![img](../Img/k8s_45.png)<br>
 
 ### (1) Master, Node1, Node2 네트워크 설정
 
@@ -241,6 +240,10 @@ k8s apt 레파지토리 추가<br>
 > sudo apt-get update<br>
 > sudo apt-get install -y kubelet kubeadm kubectl<br>
 
+kubelet : maset-node에서 전달된 컨테이너화된 workload를 실행하고 관리하는 역할을 담당<br>
+kubeadm : k8s 클러스터를 구성하기 위한 도구<br>
+kubectl : k8s 클러스터를 제어하기 위한 커맨드 라인 도구<br>
+
 > sudo apt-mark hold kubelet kubeadm kubectl<br>
 
 k8s를 설치하고 해당 버전을 고정<br>
@@ -288,6 +291,9 @@ node1, node2에도 이 과정을 모두 수행한다.
 
 ### Weave-Net 설치
 
+CNI는 컨테이너 오케스트레이션 플랫폼에서 컨테이너 간의 통신을 관리하는 인터페이스이다.<br>
+그리고 Weave-Net은 CNI일종으로 컨테이너 간의 가상 네트워크를 생성하고<br> 자동으로 IP주소를 할당하며 통신할 수 있는 환경을 제공한다.
+
 > kubectl apply -f https://github.com/weaveworks/weave/releases/download/v2.8.1/weave-daemonset-k8s.yaml
 
 ![img](../Img/k8s_41.png)<br>
@@ -324,3 +330,20 @@ node2도 똑같이 수행한다.<br>
 정상적으로 join했는지 확인하고<br>
 master 노드에서 노드리스트를 출력해 등록이 되었는지 확인하다.<br>
 또한, 기다리면 모두 Ready가 되는지 확인한다.<br>
+
+![img](../Img/k8s_46.png)<br>
+
+> kubectl get nodes -o wide<br>
+
+k8s는 이제 Docker를 컨테이너 런타임으로 지원하지 않는다.<br>
+그래서 containerd, CRI-O와 같은 다른 호환 가능한 컨테이너 런타임 중 하나로 전환해야된다.<br>
+
+containerd : 컨테이너 관리 및 실행을 처리하는 데몬 프로세스<br>
+CRI-O : 모든 컨테이너 레지스트리에서 가져올 수 있으며 OCI 컨테이너 이미지를 지원<br>
+
+지원하지 않는 이유<br>
+Docker 런타임은 kubelet의 소스 코드에 하드 코딩된 상태였으며, <br>k8s의 사용이 많아지며 커뮤니티에서는 추가 런타임 지원을 요청했다.<br>
+그래서 kubelet은 특정 런타임이 아닌 CRI와 통합하여 많은
+컨테이너 런타임을<br> 지원하게 되었고 현재 containerd는 완전한 CRI 구현을 제공한다.<br>
+그렇다고 Docker 이미지를 쓸 수 없는게 아니고 Docker는 OCI 이미지를 생성하기에<br> containerd와 CRI-O는 모두 docker 이미지를 가져오고 실행할 수 있다.<br>
+단지, k8s의 기본 엔진이 더 이상 Docker가 아니라는 것<br>
