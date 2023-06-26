@@ -132,7 +132,7 @@ local.conf에<br>
 (ChatGPT에 물어보면 도움이 된다.)<br>
 
 ![img](../Img/openstack34.png)<br>
-글씨가 띄어졌지만, 설치완료 화면이다.<br>
+설치완료 화면이다.<br>
 설치가 완료되면 http://192.168.56.103/dashboard 와같이
 openstack 대쉬보드 URL을 출력해준다.<br>
 
@@ -142,8 +142,7 @@ openstack 대쉬보드 URL을 출력해준다.<br>
 
 ### [중요]
 
-Devstack은 가상 서버를 종료하면 모든 정보가 초기화된다.<br>
-그래서 VM에서 이 상태로 스냅샷을 찍어 저장하자.<br>
+현재 상태를 스냅샷으로 저장해두자.<br>
 
 ![img](../Img/openstack36.png)<br>
 해당 가상 머신을 오른쪽 클릭한뒤 스냅샷을 클릭한다.

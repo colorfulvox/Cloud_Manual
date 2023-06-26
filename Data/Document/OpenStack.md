@@ -79,26 +79,10 @@ Neutron은 다양한 SDN 스위치 플러그인과 VLAN, 터널링, VxLAN등의 
 
 ---
 
-## [OpenStack 환경 설치]
+## [Devstack 환경 설치]
 
 Devstack은 Ubuntu 환경에서 Openstack을 자동으로 설치하는 도구이다.<br>
 여기서는 ML2로 데브스택을 설치한다.<br>
-
-### 0. 테스트 배드 구성
-
-오픈스택을 설치할 때는 인스턴스에 직접 할당하는 고정 IP범위와 외부에서 <br>인스턴스에 접속하는 유동 IP 범위가 필요하다.<br>
-고정 IP범위는 대체적으로 10.0.0.0을 주로 사용하고 유동 IP범위는 공인 IP범위나<br> 특정 지역에 접속할 수 있는 인트라넷 IP범위를 사용한다.<br>
-
-![img](../Img/%EC%98%A4%ED%94%88%EC%8A%A4%ED%83%9D%EA%B5%AC%EC%84%B1%EB%8F%84.png)<br>
-enp0s3, enp0s8을 우분투 가상 서버의 네트워크 디바이스로 사용한다.<br>
-enp0s3은 관리용 네트워크로 대시보드와 API접속에 사용한다.<br>
-enp0s8은 외부 인터넷과 접속할 수 있는 유동 IP 통로 역할을 한다.<br>
-
-외부 인터넷을 담당하는 유동 IP범위는 공유기 범위인 192.168.0.0/24를 <br>사용하고 가상 라우터 2개와 연결한다.<br>
-각 라우터는 tenant 네트워크와 연결한다.<br>
-각 라우터의 고정 범위는 10.0.0.0/24, 10.0.1.0/24를 임의로 설정했다.<br>
-해당 값에 따라 router1의 외부 게이트웨이는 192.168.0.100
-router2는 192.168.0.101이 될것이다.<br>
 
 [참고] - Neutron에서는 물리 네트워크와 연결되는 브리지 네트워크가 필요하다.<br>
 
@@ -119,3 +103,49 @@ router2는 192.168.0.101이 될것이다.<br>
 - Generic Driver
 
 ### 3. [Devstack 설치](../Document/Devstack.md)
+
+---
+
+## [OpenStack 구축]
+
+Devstack은 서버를 재부팅하면 서비스를 재시작하기 어렵다.<br>
+또한, 개발중인 소스를 받아서 사용하기도 불안정하다.<br>
+그래서, 실제 서비스가 가능한 오픈스택 환경을 구성한다.<br>
+
+### 시스템 구성도
+
+![img](../Img/openstack38.png)<br>
+오픈스택 공식 매뉴얼에서 제안하는 하드웨어 구성안이다.<br>
+
+Controller Node는 오픈스택 서비스를 관리하는 노드로 <br>네트워크 타임 프로토콜, 데이터베이스 등 각 서비스의 서버에 해당하는 컴포넌트를 설치한다.<br>
+여기서 NIC(네트워크 인터페이스 카드)는 관리용 1개, 외부용 1개로 구성된다.<br>
+
+Compute Node는 가상 서버를 생성할 수 있는 하이퍼바이저가
+설치되는 노드로 즉, 인스턴스이다.<br>
+
+Block Storage Node는 인스턴스에 연결되는 하드 디스크를 <br>생성하고 관리하는 노드로 오픈스택 서비스 중 Cinder를 설치한다.<br>
+기본적으로 LVM을 사용하며 인스턴스와 Compute Node, Controller Node를<br> 서로 연동하므로 관리용 NIC가 1개 필요하다.<br>
+
+Object Storage Node는 파일을 관리하는 노드로 오픈스택 서비스중 Swift를 설치한다.<br>
+
+## 환경
+
+1. VirtualBox
+
+   - Controller Node
+
+     - CPU : 2
+     - Memory : 4096MB
+     - Network Device : Host(enp0s3), Bridge(enp0s8), NAT(enp0s9)
+     - Storage : SATA 20GB(운영체제)
+
+   - Compute Node
+     - CPU : 2
+     - Memory : 5012MB
+     - Network Device : Host(enp0s3), Bridge(enp0s8), NAT(enp0s9)
+     - Storage : SATA 20GB(운영체제), 8GB(블록 Storage), 8GB \* 3 (오브젝트 Storage)
+
+2. Ubuntu : 20.04 LTS - Server
+3. Openstack : yoga
+
+### [가상 머신 생성 및 환경 설정](../Document/%EA%B0%80%EC%83%81%20%EB%A8%B8%EC%8B%A0%20%EC%83%9D%EC%84%B1%20%EB%B0%8F%20%ED%99%98%EA%B2%BD%20%EC%84%A4%EC%A0%95.md)
