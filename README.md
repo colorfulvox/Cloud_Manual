@@ -16,7 +16,8 @@
 4. [Docker](./Data/Document/Docker.md)
 5. [Jenkins](./Data/Document/Jenkins.md)
 6. [K8s](./Data/Document/k8s.md)<br>
-   (1) [k8s 설치](./Data/Document/k8s%20%EC%84%A4%EC%B9%98.md)
+   (1) [k8s 설치](./Data/Document/k8s%20%EC%84%A4%EC%B9%98.md)<br>
+   (2) [kubectl 명령어](./Data/Document/kubectl%EB%AA%85%EB%A0%B9%EC%96%B4.md)
 
 7. CI/CD<br>
    (1) [Local [SrpingBoot]](./Data/Document/Local%20%5BSpringBoot%5D.md)<br>
@@ -30,7 +31,6 @@
    (1) [VM 이미지 생성](./Data/Document/VM.md)<br>
    (2) [VM 서버 설정](./Data/Document/openstack-vmset.md)<br>
    (3) [Devstack 설치](./Data/Document/Devstack.md)<br>
-
    (4) OpenStack 구축
 
    - [가상 머신 생성 및 환경 설정](./Data/Document/%EA%B0%80%EC%83%81%20%EB%A8%B8%EC%8B%A0%20%EC%83%9D%EC%84%B1%20%EB%B0%8F%20%ED%99%98%EA%B2%BD%20%EC%84%A4%EC%A0%95.md)
