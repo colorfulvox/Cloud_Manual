@@ -130,22 +130,26 @@ Object Storage Node는 파일을 관리하는 노드로 오픈스택 서비스�
 
 ## 환경
 
-1. VirtualBox
+- Openstack : yoga
+- Controller Node
 
-   - Controller Node
+  - VirtualBox
+  - CPU : 2
+  - Memory : 4096MB
+  - Network Device : Host(enp0s3), Bridge(enp0s8), NAT(enp0s9)
+  - Storage : SATA 20GB(운영체제)
+  - Ubuntu : ubuntu-20.04.6-live-server-amd64
 
-     - CPU : 2
-     - Memory : 4096MB
-     - Network Device : Host(enp0s3), Bridge(enp0s8), NAT(enp0s9)
-     - Storage : SATA 20GB(운영체제)
-
-   - Compute Node
-     - CPU : 2
-     - Memory : 5012MB
-     - Network Device : Host(enp0s3), Bridge(enp0s8), NAT(enp0s9)
-     - Storage : SATA 20GB(운영체제), 8GB(블록 Storage), 8GB \* 3 (오브젝트 Storage)
-
-2. Ubuntu : 20.04 LTS - Server
-3. Openstack : yoga
+- Compute Node
+  - VirtualBox
+  - CPU : 2
+  - Memory : 5012MB
+  - Network Device : Host(enp0s3), Bridge(enp0s8), NAT(enp0s9)
+  - Storage : SATA 20GB(운영체제), 8GB(블록 Storage), 8GB \* 3 (오브젝트 Storage)
+  - Ubuntu : ubuntu-20.04.6-live-server-amd64
 
 ### [가상 머신 생성 및 환경 설정](../Document/%EA%B0%80%EC%83%81%20%EB%A8%B8%EC%8B%A0%20%EC%83%9D%EC%84%B1%20%EB%B0%8F%20%ED%99%98%EA%B2%BD%20%EC%84%A4%EC%A0%95.md)
+
+### [Openstack패키지 설치 및 DB 구성](../Document/Openstack%ED%8C%A8%ED%82%A4%EC%A7%80%20%EC%84%A4%EC%B9%98%20%EB%B0%8F%20DB%20%EA%B5%AC%EC%84%B1.md)
+
+### [Openstack 메시지 큐 RabbitMQ 설치](../Document/Openstack%20%EB%A9%94%EC%8B%9C%EC%A7%80%20%ED%81%90%20RabbitMQ%20%EC%84%A4%EC%B9%98.md)
