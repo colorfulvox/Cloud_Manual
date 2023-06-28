@@ -19,7 +19,8 @@
    (1) [k8s 설치](./Data/Document/k8s%20%EC%84%A4%EC%B9%98.md)<br>
    (2) [kubectl 명령어](./Data/Document/kubectl%EB%AA%85%EB%A0%B9%EC%96%B4.md)<br>
    (3) [namespace](./Data/Document/k8s_namespace.md)<br>
-   (4) [yaml 템플릿](./Data/Document/k8s_yaml.md)
+   (4) [yaml 템플릿](./Data/Document/k8s_yaml.md)<br>
+   (5) [Pod](/Data/Document/k8s_Pod.md)
 
 7. CI/CD<br>
    (1) [Local [SrpingBoot]](./Data/Document/Local%20%5BSpringBoot%5D.md)<br>
