@@ -153,3 +153,5 @@ Object Storage Node는 파일을 관리하는 노드로 오픈스택 서비스�
 ### [Openstack패키지 설치 및 DB 구성](../Document/Openstack%ED%8C%A8%ED%82%A4%EC%A7%80%20%EC%84%A4%EC%B9%98%20%EB%B0%8F%20DB%20%EA%B5%AC%EC%84%B1.md)
 
 ### [Openstack 메시지 큐 RabbitMQ 설치](../Document/Openstack%20%EB%A9%94%EC%8B%9C%EC%A7%80%20%ED%81%90%20RabbitMQ%20%EC%84%A4%EC%B9%98.md)
+
+### [인증서비스 KeyStone 설치](../Document/Openstack_keystone.md)
