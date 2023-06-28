@@ -18,7 +18,8 @@
 6. [K8s](./Data/Document/k8s.md)<br>
    (1) [k8s 설치](./Data/Document/k8s%20%EC%84%A4%EC%B9%98.md)<br>
    (2) [kubectl 명령어](./Data/Document/kubectl%EB%AA%85%EB%A0%B9%EC%96%B4.md)<br>
-   (3) [namespace](./Data/Document/k8s_namespace.md)
+   (3) [namespace](./Data/Document/k8s_namespace.md)<br>
+   (4) [yaml 템플릿](./Data/Document/k8s_yaml.md)
 
 7. CI/CD<br>
    (1) [Local [SrpingBoot]](./Data/Document/Local%20%5BSpringBoot%5D.md)<br>
@@ -38,4 +39,5 @@
    - [Openstack패키지 설치 및 DB 구성](./Data/Document/Openstack%ED%8C%A8%ED%82%A4%EC%A7%80%20%EC%84%A4%EC%B9%98%20%EB%B0%8F%20DB%20%EA%B5%AC%EC%84%B1.md)
    - [Openstack 메시지 큐 RabbitMQ 설치](./Data/Document/Openstack%20%EB%A9%94%EC%8B%9C%EC%A7%80%20%ED%81%90%20RabbitMQ%20%EC%84%A4%EC%B9%98.md)
    - [인증서비스 KeyStone 설치](./Data/Document/Openstack_keystone.md)
-     [Linux 팁](./Data/Document/Linux.md)
+
+[Linux 팁](./Data/Document/Linux.md)

@@ -91,6 +91,6 @@ coreDNS, CNI, Cadvisor, 클러스터 로깅,
 
 k8s를 배운다는건 k8s의 API를 배우는것이다.<br>
 
-## API
+## [namespace](../Document/k8s_namespace.md)
 
-### [namespace](../Document/k8s_namespace.md)
+## [yaml 템플릿](../Document/k8s_yaml.md)
