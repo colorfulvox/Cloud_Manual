@@ -85,3 +85,11 @@ pod중에 특정 컨테이너에 접근하는 법<br>
 재밌는건 centos에 접근한뒤 localhost 서버를 실행해보면
 nginx가 구동되는 서버가 출력된다.<br>
 (같은 IP를 가지기 때문에)<br>
+
+## Pod 수정
+
+![img](../Img/k8s_pod6.png)<br>
+
+> kubectl edit pod multipod
+
+실행중인 pod를 직접 수정할 수 있다.

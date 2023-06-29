@@ -20,7 +20,10 @@
    (2) [kubectl 명령어](./Data/Document/kubectl%EB%AA%85%EB%A0%B9%EC%96%B4.md)<br>
    (3) [namespace](./Data/Document/k8s_namespace.md)<br>
    (4) [yaml 템플릿](./Data/Document/k8s_yaml.md)<br>
-   (5) [Pod](/Data/Document/k8s_Pod.md)
+   (5) [Pod](/Data/Document/k8s_Pod.md)<br>
+   (6) [LivenessProbe](/Data/Document/k8s_livenessProbe.md)<br>
+   (7) [init container](/Data/Document/k8s_init%20container.md)<br>
+   (8) [infra container (pause)](/Data/Document/k8s_infra%20container.md)<br>
 
 7. CI/CD<br>
    (1) [Local [SrpingBoot]](./Data/Document/Local%20%5BSpringBoot%5D.md)<br>

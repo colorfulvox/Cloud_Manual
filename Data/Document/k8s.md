@@ -96,3 +96,9 @@ k8s를 배운다는건 k8s의 API를 배우는것이다.<br>
 ## [yaml 템플릿](../Document/k8s_yaml.md)
 
 ## [Pod](../Document/k8s_Pod.md)
+
+## [livenessProbe](../Document/k8s_livenessProbe.md)
+
+## [init container](../Document/k8s_init%20container.md)
+
+## [infra container (pause)](../Document/k8s_infra%20container.md)
