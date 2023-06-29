@@ -102,3 +102,7 @@ k8s를 배운다는건 k8s의 API를 배우는것이다.<br>
 ## [init container](../Document/k8s_init%20container.md)
 
 ## [infra container (pause)](../Document/k8s_infra%20container.md)
+
+## [static Pod](../Document/k8s_staticPod.md)
+
+## [Pod Resource 할당](../Document/k8s_PodResource.md)

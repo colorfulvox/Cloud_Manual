@@ -24,7 +24,8 @@
    (6) [LivenessProbe](/Data/Document/k8s_livenessProbe.md)<br>
    (7) [init container](/Data/Document/k8s_init%20container.md)<br>
    (8) [infra container (pause)](/Data/Document/k8s_infra%20container.md)<br>
-
+   (9) [static Pod](/Data/Document/k8s_staticPod.md)<br>
+   (10) [Pod Resource 할당](/Data/Document/k8s_PodResource.md)<br>
 7. CI/CD<br>
    (1) [Local [SrpingBoot]](./Data/Document/Local%20%5BSpringBoot%5D.md)<br>
    (2) [Github + BashScript [Springboot]](./Data/Document/Github%20%5BSpringBoot%5D.md)<br>

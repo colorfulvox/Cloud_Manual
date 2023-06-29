@@ -17,7 +17,7 @@ ReplicationController -> v1<br>
 Service -> v1<br>
 PersistentVolume -> v1
 
-예시)
+## [예시]
 
 pod yaml
 

@@ -7,7 +7,7 @@ workernode에 여러 pod들을 실행해서 관리하기 복잡하지만,<br> na
 
 k8s 클러스터 하나를 여러 팀이나 사용자가 함께 공유함<br>
 
-### [CLI 명령어]
+### CLI 명령어
 
 > kubectl get namepsaces
 
