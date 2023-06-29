@@ -93,3 +93,56 @@ nginx가 구동되는 서버가 출력된다.<br>
 > kubectl edit pod multipod
 
 실행중인 pod를 직접 수정할 수 있다.
+
+## [Pod환경 변수 설정]
+
+환경 변수 : Pod내의 컨테이너가 실행될 때 필요로 하는 변수<br>
+예시) NGNIX Dockerfile일경우<br>
+ENV NGNIX_VERSION 1.19.2<br>
+
+Pod 실행 시 미리 정의된 컨테이너 환경변수를 변경할 수 있다.<br>
+
+```
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mypod
+spec:
+  containers:
+  - image: nginx:1.14
+    name: nginx
+    ports:
+    - containerPort: 80
+    env:
+    - name: MyVar
+      value: "testvalue"
+```
+
+nginx를 포함해서 testvalue값을 가진 MyVar도 환경 변수도 할당해달라 요청하게된다.<br>
+
+![img](../Img/k8s_pod7.png)<br>
+Pod를 생성한뒤 컨테이너 내부로 들어가 환경 변수를 확인하면<br> 내가 설정한 환경 변수가 보인다.<br>
+
+## [Pod 디자인 패턴의 종류]
+
+실제로는 Single Pod가 아닌 multi Pod를 많이 사용한다.<br>
+
+### [Sidecar]
+
+![img](../Img/k8s_pod9.png)<br>
+Pod안에 컨테이너 두개를 생성한뒤
+AppContainer[Web Server]가 로그를 만들면<br>
+해당 로그를 분석하거나 관리하는 Sidecar를가진다.<br>
+
+### [Adapter]
+
+![img](../Img/k8s_pod10.png)<br>
+외부의 데이터를 Adapter가 받아와 분석한뒤
+결과를<br> AppContainer[Web Server]에게 전달한다.<br>
+
+### [Ambassador]
+
+![img](../Img/k8s_pod11.png)<br>
+고객이 AppContainer[Web Server]에 접속하면<br>
+Ambassador가 로드밸런서 역할을 하며
+각 서비스들을 이용할 수 있게 한다.
