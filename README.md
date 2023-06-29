@@ -15,7 +15,14 @@
 
 4. [Docker](./Data/Document/Docker.md)
 5. [Jenkins](./Data/Document/Jenkins.md)
-6. [K8s](./Data/Document/k8s.md)<br>
+6. CI/CD<br>
+   (1) [Local [SrpingBoot]](./Data/Document/Local%20%5BSpringBoot%5D.md)<br>
+   (2) [Github + BashScript [Springboot]](./Data/Document/Github%20%5BSpringBoot%5D.md)<br>
+   (3) [Docker [SpringBoot]](./Data/Document/Docker%20%5BSpringboot%5D.md)<br>
+   (4) [Jenkins [SpringBoot]](./Data/Document/Jenkins%20%5BSpringBooot%5D.md)<br>
+   (5) [Jenkins + Docker [SpringBoot]](./Data/Document/Jenkins%2BDocker%20%5BSpringBoot%5D.md)<br>
+   (6) [Github Actions + Docker [SpringBoot]](./Data/Document/GithubActions%2BDocker%20%5BSpringBoot%5D.md)
+7. [K8s](./Data/Document/k8s.md)<br>
    (1) [k8s 설치](./Data/Document/k8s%20%EC%84%A4%EC%B9%98.md)<br>
    (2) [kubectl 명령어](./Data/Document/kubectl%EB%AA%85%EB%A0%B9%EC%96%B4.md)<br>
    (3) [namespace](./Data/Document/k8s_namespace.md)<br>
@@ -26,13 +33,6 @@
    (8) [infra container (pause)](/Data/Document/k8s_infra%20container.md)<br>
    (9) [static Pod](/Data/Document/k8s_staticPod.md)<br>
    (10) [Pod Resource 할당](/Data/Document/k8s_PodResource.md)<br>
-7. CI/CD<br>
-   (1) [Local [SrpingBoot]](./Data/Document/Local%20%5BSpringBoot%5D.md)<br>
-   (2) [Github + BashScript [Springboot]](./Data/Document/Github%20%5BSpringBoot%5D.md)<br>
-   (3) [Docker [SpringBoot]](./Data/Document/Docker%20%5BSpringboot%5D.md)<br>
-   (4) [Jenkins [SpringBoot]](./Data/Document/Jenkins%20%5BSpringBooot%5D.md)<br>
-   (5) [Jenkins + Docker [SpringBoot]](./Data/Document/Jenkins%2BDocker%20%5BSpringBoot%5D.md)<br>
-   (6) [Github Actions + Docker [SpringBoot]](./Data/Document/GithubActions%2BDocker%20%5BSpringBoot%5D.md)
 
 8. [OpenStack](./Data/Document/OpenStack.md)<br>
    (1) [VM 이미지 생성](./Data/Document/VM.md)<br>
