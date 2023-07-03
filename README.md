@@ -53,6 +53,8 @@
 - [static Pod](/Data/Document/k8s_staticPod.md)<br>
 - [Pod Resource 할당](/Data/Document/k8s_PodResource.md)<br>
 
+(6) [Controller](/Data/Document/k8s_controller.md) : Replication, ReplicaSet, Deployment, DaemonSet, StatefulSet, JOB Controller
+
 ---
 
 ## [OpenStack](./Data/Document/OpenStack.md)
