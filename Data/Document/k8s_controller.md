@@ -613,6 +613,7 @@ Rollback도 된다.\
 ## [6] JOB Controller
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 K8s는 기본적으로 Pod의 Running 상태를 보장한다.<br>
 그리고 Job은 Pod의 Batch 처리 작업을 보장하기위한 기능이다.<br>
@@ -770,6 +771,8 @@ spec:
 >>>>>>> parent of 8308464 (controller 정리)
 =======
 ## [6] JOB Controller
+>>>>>>> parent of 8308464 (controller 정리)
+=======
 >>>>>>> parent of 8308464 (controller 정리)
 =======
 >>>>>>> parent of 8308464 (controller 정리)
