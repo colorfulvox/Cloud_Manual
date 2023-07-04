@@ -31,10 +31,10 @@
 
 ## [K8s](Data/Document/k8s.md)
 
-(1) [k8s 설치](<Data/Document/k8s 설치.md>)\
-(2) [kubectl 명령어](Data/Document/kubectl명령어.md)\
-(3) [namespace](Data/Document/k8s_namespace.md)\
-(4) [yaml 템플릿](Data/Document/k8s_yaml.md)\
+(1) [k8s 설치](//Data/Document/k8s%20%EC%84%A4%EC%B9%98.md)<br>
+(2) [kubectl 명령어](Data/Document/kubectl명령어.md)<br>
+(3) [namespace](Data/Document/k8s_namespace.md)<br>
+(4) [yaml 템플릿](Data/Document/k8s_yaml.md)<br>
 (5) [Pod](Data/Document/k8s_Pod.md)
 
 - [LivenessProbe](Data/Document/k8s_livenessProbe.md)
@@ -43,7 +43,8 @@
 - [static Pod](Data/Document/k8s_staticPod.md)
 - [Pod Resource 할당](Data/Document/k8s_PodResource.md)
 
-(6) [Controller](Data/Document/k8s_controller.md) : Replication, ReplicaSet, Deployment, DaemonSet, StatefulSet, Job, CronJob
+(6) [Controller](Data/Document/k8s_controller.md) : Replication, ReplicaSet, Deployment, DaemonSet, StatefulSet, Job, CronJob<br>
+(7) [Service](./Data/Document/k8s_service.md)
 
 ## [OpenStack](Data/Document/OpenStack.md)
 
