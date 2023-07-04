@@ -1,8 +1,6 @@
 # Document
 
-[클라우드 컴퓨팅](<Data/Document/클라우드 컴퓨팅.md>)\
-
-
+## [클라우드 컴퓨팅](<Data/Document/클라우드 컴퓨팅.md>)
 
 ## [클라우드 네트워크](<Data/Document/클라우드 네트워크.md>)
 
@@ -18,8 +16,7 @@
 (6) [ELB 구성하기](Data/Document/ELB.md)\
 (7) [EFS 구성하기](Data/Document/EFS.md)\
 (8) [VPC 생성](Data/Document/VPC.md)\
-(9) [S3 버킷 생성하기](Data/Document/S3-Bucket.md)\
-
+(9) [S3 버킷 생성하기](Data/Document/S3-Bucket.md)
 
 ***
 
@@ -50,16 +47,11 @@
 (4) [yaml 템플릿](Data/Document/k8s\_yaml.md)\
 (5) [Pod](Data/Document/k8s\_Pod.md)
 
-* [LivenessProbe](Data/Document/k8s\_livenessProbe.md)\
-
-* [init container](<Data/Document/k8s\_init container.md>)\
-
-* [infra container (pause)](<Data/Document/k8s\_infra container.md>)\
-
-* [static Pod](Data/Document/k8s\_staticPod.md)\
-
-* [Pod Resource 할당](Data/Document/k8s\_PodResource.md)\
-
+* [LivenessProbe](Data/Document/k8s\_livenessProbe.md)
+* [init container](<Data/Document/k8s\_init container.md>)
+* [infra container (pause)](<Data/Document/k8s\_infra container.md>)
+* [static Pod](Data/Document/k8s\_staticPod.md)
+* [Pod Resource 할당](Data/Document/k8s\_PodResource.md)
 
 (6) [Controller](Data/Document/k8s\_controller.md) : Replication, ReplicaSet, Deployment, DaemonSet, StatefulSet, Job, CronJob
 
