@@ -447,3 +447,128 @@ StatefulSet도 edit로 버전을 바꾸니 RollingUpdate가 된다.<br>
 Rollback도 된다.<br>
 
 ## [6] JOB Controller
+
+K8s는 기본적으로 Pod의 Running 상태를 보장한다.<br>
+그리고 Job은 Pod의 Batch 처리 작업을 보장하기위한 기능이다.<br>
+
+- 비정상 종료시 다시 실행
+- 정상 종료시 Job 완료
+
+백업, 가비지 Clear, 로그를 보내는 등 Batch 작업에 필요한 일들을 관리하기 위한 Controller<br>
+
+### [Job yaml 파일]
+
+```
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: job-example
+spec:
+# completions: 5 실행할 job의 수가 몇개인지 지정 [순차적으로 실행한다.]
+
+# parallelism: 2 병렬성 동시에 running되는 Pod 수 지정
+
+# activeDeadlineSeconds: 15 지정 시간 내에 Job이 완료안되면 강제로 완료시킨다.
+
+  template:
+    spec:
+      containers:
+      - name: centos-container
+        image: centos:7
+        command: ["bash"]
+        args:
+        - "-c"
+        - "echo 'Hello World'; sleep 50; echo 'Bye' "
+      restartPolicy: Never
+      # 비정상 종료 되면 Pod를 재시작한다.
+      # OnFailure는 비정상 종료 되면 컨테이너를 재시작한다.
+
+  backoffLimit:3 # 3번까지 재시작하고 안되면 작업을 아예 없애버린다. (Default = 6)
+```
+
+Hello World를 한뒤 50초 뒤 Bye를 출력하고 작업이 완료된다.
+
+![img](../Img/k8s_controller31.png)<br>
+
+> kubectl create -f job-exam.yaml
+
+job 실행<br>
+
+![img](../Img/k8s_controller32.png)<br>
+
+> kubectl delete pod job-example-d89q5
+
+Job이 완료되기 (50초)전에 해당 Pod를 삭제하니 다시 Pod를 생성하면서<br> 작업을 하려는 것을 볼 수 있다.
+
+![img](../Img/k8s_controller33.png)<br>
+Pod의 작업이 완료되어도 삭제되지 않고 남아있다.<br>
+Pod가 어떤 작업을 했고 로그를 남겼는지 확인하기위해 자동으로 보존이 된다.<br>
+
+![img](../Img/k8s_controller34.png)<br>
+
+> kubectl delete jobs.batch job-example
+
+job을 삭제하니 해당 Pod도 자동으로 삭제된다.
+
+## [7] Cron Job
+
+원하는 시간에 Job 실행 예약을 지원한다.<br>
+Job controller로 실행할 Pod를 주기적으로 반복해서 실행시켜준다.<br>
+Data Backup, Send email, task Clean등 주기적으로 해야되는 작업에 활용된다.<br>
+
+### CronJob Schedule : " 0 3 1 \* \* "
+
+- Minutes: 0~59
+- Hours: 0~23
+- Day of the month: 1~31
+- Month: 1~12
+- Day of the week: 0~6 (일요일 ~ 토요일)
+
+\*는 반복을 의미
+
+ex)
+
+- 매주 일요일 새벽 3시 Job을 실행 = 0 3 \* \* 0
+- 주중 새벽 3시 = 0 3 \* \* 1-5
+- 주말 새벽 3시 = 0 3 \* \* 0,6
+- 5분 마다 실행 = \*/5 \* \* \* \*
+- 2시간 마다 실행 = 0 \*/2 \* \* \*
+
+### [CronJob yaml 파일]
+
+```
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: cronjob-example
+spec:
+  schedule: "* * * * *"
+
+  # startingDeadlineSeconds: 300
+  # 300초안에 jobTemplate을 실행하지 못하면 해당 Job을 취소한다.
+
+  # concurrencyPolicy: Forbid or Allow
+  # Allow는 한번에 여러 Job의 실행을 허용한다. Forbid는 거부
+
+  # successfulJobHistoryLimit: 3
+  # 성공한 Job에 대한 Job Pod를 3개로 제한한다.
+
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: centos-container
+            image: centos:7
+            command: ["bash"]
+            args:
+            - "-c"
+            - "echo 'Hello World'; sleep 50; echo 'Bye' "
+          restartPolicy: Never
+```
+
+![img](../Img/k8s_controller35.png)<br>
+
+> kubectl create -f cronjob-exam.yaml
+
+1분마다 Job을 실행하는것을 볼 수 있다
