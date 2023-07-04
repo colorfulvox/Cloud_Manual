@@ -1,10 +1,9 @@
+---
+description: 컨테이너 기반 오픈소스 가상화 플랫폼
+---
+
 # Docker
 
-[뒤로가기](../../)
-
-## Docker
-
-컨테이너 기반 오픈소스 가상화 플랫폼\
 다양한 프로그램, 실행 환경을 컨테이너로 추상화하고 동일한 인터페이스를 제공하여\
 프로그램의 배포 및 관리를 단순하게 해준다.
 
@@ -131,17 +130,12 @@ docker rm 컨테이너 tag or id //컨테이너 삭제 dokcer rmi tag or id //�
 
 ### Docker Hub
 
-자신이 만든 도커 이미지를 저장할 수 있는 클라우드 저장소\
-
+자신이 만든 도커 이미지를 저장할 수 있는 클라우드 저장소
 
 #### [Docker Hub](https://hub.docker.com/)
 
 (1) 회원가입 생략\
-(2) 저장소 생성\
-\
-\
-\
-
+(2) 저장소 생성
 
 <figure><img src="../Img/hub1.png" alt=""><figcaption></figcaption></figure>
 
@@ -149,11 +143,7 @@ docker rm 컨테이너 tag or id //컨테이너 삭제 dokcer rmi tag or id //�
 
 <figure><img src="../Img/hub3.png" alt=""><figcaption></figcaption></figure>
 
-(3) 도커 이미지 업로드\
-\
-\
-\
-
+(3) 도커 이미지 업로드
 
 <figure><img src="../Img/hub4.png" alt=""><figcaption><p>(docker 로그인)</p></figcaption></figure>
 
