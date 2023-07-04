@@ -105,65 +105,15 @@ OVS_BRIDGE_MAPPINGS=public:br-enp0s8<br>
 
 stack.sh을 실행해 devstack을 설치한다.
 
-<<<<<<< HEAD
-#### \[트러블 슈팅]
-
-설치 관련해서 오류가 많다.\
-오류가 날경우,\
-
-=======
 ### [트러블 슈팅]
 
 설치 관련해서 오류가 많다.<br>
 오류가 날경우,<br>
->>>>>>> parent of 4d4a984 (GITBOOK-5: change request with no subject merged in GitBook)
 
 1. ./unstack.sh을 하여 서비스 관련 구성 및 네트워크를 정리한다.
 2. ./clean.sh을 하여 openstack 관련 남은 파일을 모두 삭제한다.
 3. sudo apt-get update로 패키지를 업데이트 해준다.
 
-<<<<<<< HEAD
-![img](../Img/openstack33.png)\
-vi /etc/netplan의 yaml파일이 정확하게 입력되었는지 그리고\
-local.conf의 PUBLIC\_NETWORK\_GATEWAY="192.168.0.1"이 제대로 입력되었는지 확인한다.\
-
-
-\[설치중 git clone에서 멈추고 종료]\
-local.conf에\
-
-
-> GIT\_BASE=${GIT\_BASE:-https://git.openstack.org}
-
-를 추가한다.\
-하지만, 안될 수 있다.\
-그래서 다시 unstack.sh를 하고 stack.sh으로 다시 설치하면서 될때까지 하면 되긴 한다.\
-
-
-다른 오류관련해서는 구글링을 해야된다.\
-(ChatGPT에 물어보면 도움이 된다.)\
-
-
-![img](../Img/openstack34.png)\
-설치완료 화면이다.\
-설치가 완료되면 http://192.168.56.103/dashboard 와같이 openstack 대쉬보드 URL을 출력해준다.\
-
-
-실제로 접속하면,\
-![img](../Img/openstack35.png)\
-접속이 되는것을 확인할 수 있다.\
-
-
-#### \[중요]
-
-현재 상태를 스냅샷으로 저장해두자.\
-
-
-![img](../Img/openstack36.png)\
-해당 가상 머신을 오른쪽 클릭한뒤 스냅샷을 클릭한다.
-
-![img](../Img/openstack37.png)\
-찍기를 누른뒤 다음과 같이 입력한뒤 확인을 누른다.\
-=======
 ![img](../Img/openstack33.png)<br>
 vi /etc/netplan의 yaml파일이 정확하게 입력되었는지 그리고<br>
 local.conf의 PUBLIC_NETWORK_GATEWAY="192.168.0.1"이
@@ -199,4 +149,3 @@ openstack 대쉬보드 URL을 출력해준다.<br>
 
 ![img](../Img/openstack37.png)<br>
 찍기를 누른뒤 다음과 같이 입력한뒤 확인을 누른다.<br>
->>>>>>> parent of 4d4a984 (GITBOOK-5: change request with no subject merged in GitBook)

@@ -124,11 +124,3 @@ enp0s8의 아이피를 확인한뒤, 호스트에서 터미널을 연다.
 또한, 해당 IP로 SSH 연결이되는지도 확인한다.
 
 ### 해당 IP인 enp0s3는 관리용 IP로 SSH접속, 대시보드 접속, API 접속에 사용할 것이다.
-
-## Neutron 네트워크 옵션
-Q_USE_SECGROUP = True
-FLOATING_RANGE = "192.168.0.0/24"
-FIXED_RANGE = "10.0.0.0/24"
-Q_FLOATING_ALLOCATION_POOL=start=192.168.0.100,end=192.168.0.200
-PUBLIC_NETWORK_GATEWAY = "192.168.0.1"
-PUBLIC_INTERFACE = enp0s8
