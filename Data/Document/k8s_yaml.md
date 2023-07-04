@@ -1,10 +1,6 @@
 [뒤로가기](../../README.md)<br>
 
-<<<<<<< HEAD
-[뒤로가기](../../)\
-=======
 # yaml 템플릿
->>>>>>> parent of 4d4a984 (GITBOOK-5: change request with no subject merged in GitBook)
 
 쉽게 읽을 수 있는 데이터 직렬화 양식<br>
 python처럼 들여쓰기로 데이터 계층을 표기<br>

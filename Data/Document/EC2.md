@@ -1,14 +1,6 @@
-<<<<<<< HEAD
-# EC2
-
-[뒤로가기](../../)
-
-### EC2 생성하기
-=======
 [뒤로가기](../../README.md)
 
 ## EC2 생성하기
->>>>>>> parent of 4d4a984 (GITBOOK-5: change request with no subject merged in GitBook)
 
 구축 순서
 

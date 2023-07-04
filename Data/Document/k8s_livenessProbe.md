@@ -1,10 +1,6 @@
 [뒤로가기](../../README.md)<br>
 
-<<<<<<< HEAD
-[뒤로가기](../../)\
-=======
 # [livenessProbe] 컨테이너 진단
->>>>>>> parent of 4d4a984 (GITBOOK-5: change request with no subject merged in GitBook)
 
 k8s에서는 컨테이너에대한 self-healing 기능을 제공한다.<br>
 그리고 livenessProbe가 k8s의 self-healing 기능이다.<br>
@@ -102,21 +98,13 @@ spec:
         port: 80
 ```
 
-<<<<<<< HEAD
-![img](../Img/k8s\_liveness1.png)
-=======
 ![img](../Img/k8s_liveness1.png)
->>>>>>> parent of 4d4a984 (GITBOOK-5: change request with no subject merged in GitBook)
 
 > kubectl create -f nginx-liveness.yaml
 
 yaml파일에 대한 Pod를 실행한다.
 
-<<<<<<< HEAD
-![img](../Img/k8s\_liveness2.png)
-=======
 ![img](../Img/k8s_liveness2.png)
->>>>>>> parent of 4d4a984 (GITBOOK-5: change request with no subject merged in GitBook)
 
 > kubectl describe pod nginx-liveness
 
@@ -140,14 +128,7 @@ failureThreshold: 3
 
 이런 추가적인 기능에대한 자세한 정보는<br>
 
-<<<<<<< HEAD
-이런 추가적인 기능에대한 자세한 정보는\
-
-
-![img](../Img/k8s\_liveness3.png)
-=======
 ![img](../Img/k8s_liveness3.png)
->>>>>>> parent of 4d4a984 (GITBOOK-5: change request with no subject merged in GitBook)
 
 > kubectl get pod nginx-liveness -o yaml
 
@@ -177,20 +158,11 @@ spec:
 
 smlinux/unhealthy 이미지는 처음 5번은 정상적인 상태 코드를 응답하고<br> 그 뒤로 HTTP 500 ERROR를 발생시키는 이미지이다.<br>
 
-<<<<<<< HEAD
-
-![img](../Img/k8s\_liveness4.png)
-
-> kubectl create -f unhealthy-pod.yaml
-
-![img](../Img/k8s\_liveness5.png)
-=======
 ![img](../Img/k8s_liveness4.png)
 
 > kubectl create -f unhealthy-pod.yaml
 
 ![img](../Img/k8s_liveness5.png)
->>>>>>> parent of 4d4a984 (GITBOOK-5: change request with no subject merged in GitBook)
 
 > kubectl describe pod unhealthy-pod
 
