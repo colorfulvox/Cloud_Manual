@@ -18,6 +18,8 @@ description: 컨테이너 기반 오픈소스 가상화 플랫폼
 컨네이너 : 격리된 공간에서 프로세스가 동작하는 기술\
 이미지 : 컨테이너 실행에 필요한 파일과 설정값을 포함한 것
 
+<figure><img src="../../.gitbook/assets/다운로드 (1).jpg" alt=""><figcaption><p>test</p></figcaption></figure>
+
 ### Docker 설치
 
 (0) 필수 패키지 설치
