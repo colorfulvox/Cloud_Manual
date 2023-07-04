@@ -4,8 +4,6 @@
 
 ## [클라우드 네트워크](./Data/Document/%ED%81%B4%EB%9D%BC%EC%9A%B0%EB%93%9C%20%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC.md)
 
----
-
 ## [AWS](./Data/Document/AWS.md)
 
 (1) [AWS 계정 설정](./Data/Document/AWSaccount.md)<br>
@@ -31,8 +29,6 @@
 (5) [Jenkins + Docker \[SpringBoot\]](<Data/Document/Jenkins+Docker [SpringBoot].md>)\
 (6) [Github Actions + Docker \[SpringBoot\]](<Data/Document/GithubActions+Docker [SpringBoot].md>)
 
----
-
 ## [K8s](Data/Document/k8s.md)
 
 (1) [k8s 설치](<Data/Document/k8s 설치.md>)\
@@ -49,8 +45,6 @@
 
 (6) [Controller](Data/Document/k8s_controller.md) : Replication, ReplicaSet, Deployment, DaemonSet, StatefulSet, Job, CronJob
 
----
-
 ## [OpenStack](Data/Document/OpenStack.md)
 
 (1) [VM 이미지 생성](Data/Document/VM.md)\
@@ -63,6 +57,4 @@
 - [Openstack 메시지 큐 RabbitMQ 설치](<Data/Document/Openstack 메시지 큐 RabbitMQ 설치.md>)
 - [인증서비스 KeyStone 설치](Data/Document/Openstack_keystone.md)
 
----
-
-[Linux 팁](Data/Document/Linux.md)
+## [Linux 팁](Data/Document/Linux.md)
