@@ -489,6 +489,8 @@ replicas 갯수를 줄였더니 순서대로 2번이 삭제된다.
 
 StatefulSet도 edit로 버전을 바꾸니 RollingUpdate가 된다.\
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 
 ![img](../Img/k8s\_controller30.png)\
 Rollback도 된다.\
@@ -630,3 +632,9 @@ spec:
 > kubectl create -f cronjob-exam.yaml
 
 1분마다 Job을 실행하는것을 볼 수 있다
+=======
+## [6] JOB Controller
+>>>>>>> parent of 8308464 (controller 정리)
+=======
+## [6] JOB Controller
+>>>>>>> parent of 8308464 (controller 정리)

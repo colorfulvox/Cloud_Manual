@@ -53,7 +53,15 @@
 * [static Pod](Data/Document/k8s\_staticPod.md)
 * [Pod Resource 할당](Data/Document/k8s\_PodResource.md)
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 (6) [Controller](Data/Document/k8s\_controller.md) : Replication, ReplicaSet, Deployment, DaemonSet, StatefulSet, Job, CronJob
+=======
+(6) [Controller](/Data/Document/k8s_controller.md) : Replication, ReplicaSet, Deployment, DaemonSet, StatefulSet, JOB Controller
+>>>>>>> parent of 8308464 (controller 정리)
+=======
+(6) [Controller](/Data/Document/k8s_controller.md) : Replication, ReplicaSet, Deployment, DaemonSet, StatefulSet, JOB Controller
+>>>>>>> parent of 8308464 (controller 정리)
 
 ***
 
