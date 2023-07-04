@@ -1,10 +1,14 @@
 # Local \[SpringBoot]
 
+[뒤로가기](../../)
+
+## Local \[SpringBoot]
+
 LocalPC에서 SpringBoot 프로젝트를 빌드한뒤 해당 파일을 EC2에 전송시켜 서버 배포
 
 ### 구성도
 
-![](../Img/local+SpringBoot.png)
+![img](../Img/local+SpringBoot.png)
 
 ### 환경
 
@@ -21,32 +25,28 @@ EC2 - Ubuntu (AWS EC2 생성 과정 참조) [EC2](EC2.md)
 
 #### (1) SpringBoot 프로젝트 생성
 
-<figure><img src="../Img/local1.png" alt=""><figcaption></figcaption></figure>
-
-<figure><img src="../Img/local2.png" alt=""><figcaption><p>(Create a Gradle Project로 선택)</p></figcaption></figure>
-
+![img](../Img/local1.png)\
+![img](../Img/local2.png)\
+(Create a Gradle Project로 선택)\
 다음은 이 순서대로 세팅\
-3.0.7 -> Java -> com.example -> demo -> Jar -> 17 -> Spring Web (해당 항목만 체크하고 생성)
-
-#### \[주의사항]&#x20;
-
-<figure><img src="../Img/local3.png" alt=""><figcaption></figcaption></figure>
-
-해당 위치에 Gradle Error 발생 알림이 뜨면 Vscode의 Java 환경 세팅 수정 \
-
-
-<figure><img src="../Img/local4.png" alt=""><figcaption><p>(vscode File -> Preferences -> Settings 이동)</p></figcaption></figure>
-
+3.0.7 -> Java -> com.example -> demo -> Jar -> 17 -> Spring Web (해당 항목만 체크하고 생성)\
 \
+
+
+\[주의사항] 해당 위치에 Gradle Error 발생 알림이 뜨면 Vscode의 Java 환경 세팅 수정 ![img](../Img/local3.png)\
 \
+
+
+![img](../Img/local4.png)\
+(vscode File -> Preferences -> Settings 이동)\
+\
+![img](../Img/local5.png)\
 (java home 검색 -> Edit in settings.json 클릭)\
 \
 ![img](../Img/local6.png)\
 (해당 항목들로 구성되어 있는지 확인)\
 \
 
-
-<figure><img src="../Img/local5.png" alt=""><figcaption></figcaption></figure>
 
 ![img](../Img/local7.png)\
 (src -> main -> resources -> static에 이동후 index.html 파일 생성)\
