@@ -36,11 +36,11 @@ LB를 자동으로 프로 비전하는 기능 지원<br>
 클러스터 안에서 외부에 접속시 사용할 도메인 등록<br>
 클러스터 도메인이 실제 외부 도메인으로 치환되어 동작<br>
 
-### deployment Yaml 파일 예시
+### deployment yaml 파일 예시
 
 ![img](../Img/k8s_service3.png)<br>
 
-### Service Yaml 파일
+### Service yaml 파일
 
 ```
 apiVersion: v1
