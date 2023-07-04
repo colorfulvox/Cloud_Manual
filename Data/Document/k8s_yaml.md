@@ -1,25 +1,27 @@
-# k8s\_yaml
+[뒤로가기](../../README.md)<br>
 
+<<<<<<< HEAD
 [뒤로가기](../../)\
+=======
+# yaml 템플릿
+>>>>>>> parent of 4d4a984 (GITBOOK-5: change request with no subject merged in GitBook)
 
-
-## yaml 템플릿
-
-쉽게 읽을 수 있는 데이터 직렬화 양식\
-python처럼 들여쓰기로 데이터 계층을 표기\
-(key-value타입) 배열 문법 : '-' 문자로 여러개 나열 가능
+쉽게 읽을 수 있는 데이터 직렬화 양식<br>
+python처럼 들여쓰기로 데이터 계층을 표기<br>
+(key-value타입)
+배열 문법 : '-' 문자로 여러개 나열 가능
 
 k8s object를 정의할때 apiVersion이 필요하다.
 
-API Object 종류\
-Deployment -> apps/v1\
-Pod -> v1\
-ReplicaSet -> apps/v1\
-ReplicationController -> v1\
-Service -> v1\
+API Object 종류<br>
+Deployment -> apps/v1<br>
+Pod -> v1<br>
+ReplicaSet -> apps/v1<br>
+ReplicationController -> v1<br>
+Service -> v1<br>
 PersistentVolume -> v1
 
-### \[예시]
+## [예시]
 
 pod yaml
 
