@@ -19,6 +19,39 @@ Deploy Controller로 동일한 Pod를 실행했을때<br>
 LoadBalancer 기능을 하는 가상 IP를 생성한뒤<br>
 해당 IP들을 묶어 균등하게 처리할 수 있도록 관리하게 된다.
 
+## kube-proxy
+
+![img](../Img/k8s_service19.png)<br>
+
+master, workernode에는 모두 kube-porxy가 있다.
+kube-porxy는 clusterIP 서비스와 같은 서비스를 요청하게되면 kube-porxy가 동작하여
+node에 iptables의 rule을 만든다.
+
+그리고 접속하게되면 iptables rule에따라 접속하게 된다.
+
+> iptables -t nat -S | grep 80
+
+1. Service를 만들게 되면 iptables rule을 만든다.
+2. NodePort에 대한 응답에 대기하며 접속하면 pod와 연결 시켜준다.
+
+## kube-proxy mode
+
+### userspace
+
+클라이언트의 서비스 요청을 iptables를 거쳐 kube-proxy가 받아서 연결<br>
+초기 버전에 사용했음<br>
+
+### iptables
+
+default k8s 네트워크 모드<br>
+service API 요청시 iptables rule이 생성<br>
+클라이언트 연결은 kube-proxy가 받아서 iptables rule을 통해 연결<br>
+
+### IPVS
+
+리눅스 커널이 지원하는 L4 LoadBalance 기술을 이용<br>
+별도의 ipvs 지원 모듈을 설정한 후 적용 가능<br>
+
 ## Service Type
 
 ### (1) ClusterIP(default)

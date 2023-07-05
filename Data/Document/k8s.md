@@ -110,3 +110,5 @@ k8s를 배운다는건 k8s의 API를 배우는것이다.<br>
 ## [Controller](../Document/k8s_controller.md)
 
 ## [Service](../Document/k8s_service.md)
+
+## [Headless Service](../Document/k8s_headlessService.md)

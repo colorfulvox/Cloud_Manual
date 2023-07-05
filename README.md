@@ -44,7 +44,8 @@
 - [Pod Resource 할당](Data/Document/k8s_PodResource.md)
 
 (6) [Controller](Data/Document/k8s_controller.md) : Replication, ReplicaSet, Deployment, DaemonSet, StatefulSet, Job, CronJob<br>
-(7) [Service](./Data/Document/k8s_service.md) : ClusterIP, NodePort, LoadBalancer, ExternalName
+(7) [Service](./Data/Document/k8s_service.md) : ClusterIP, NodePort, LoadBalancer, ExternalName<br>
+(8) [Headless Service](./Data/Document/k8s_headlessService.md)<br>
 
 ## [OpenStack](Data/Document/OpenStack.md)
 
