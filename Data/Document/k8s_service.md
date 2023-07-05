@@ -2,7 +2,7 @@
 
 # Service
 
-동일한 서비스를 제공하는 Pod 그룹의 단일 진입점을 제공
+Pod를 묶어주는 Virtual IP
 
 Deploy Controller로 동일한 Pod를 실행했을때<br>
 ![img](../Img/k8s_service1.png)<br>
@@ -23,24 +23,17 @@ LoadBalancer 기능을 하는 가상 IP를 생성한뒤<br>
 
 ### (1) ClusterIP(default)
 
-Pod 그룹의 단일 진입점(Virtual IP) 생성<br>
-
-(2) NodePort<br>
-ClusterIP가 생성된 후 모든 worker Node에 접속가능한 Port 예약<br>
-
-(3) LoadBalancer<br>
-AWS, Azure, GCP, OpenStack 클라우드에 적용<br>
-LB를 자동으로 프로 비전하는 기능 지원<br>
-
-(4) ExternalName<br>
-클러스터 안에서 외부에 접속시 사용할 도메인 등록<br>
-클러스터 도메인이 실제 외부 도메인으로 치환되어 동작<br>
+selector의 label이 동일한 Pod들의 그룹을 묶어
+단일 진입점(Virtual IP) 생성<br>
+클러스터 내부에서만 사용 가능<br>
+type 생략시 default값으로 10.96.0.0/12 범위에서 할당<br>
+충돌을 예방하기위해 대체로 clusterIP는 랜덤값을 받기위해 생략한다.<br>
 
 ### deployment yaml 파일 예시
 
 ![img](../Img/k8s_service3.png)<br>
 
-### Service yaml 파일
+### ClusterIP yaml 파일
 
 ```
 apiVersion: v1
@@ -48,11 +41,133 @@ kind: Service
 metadata:
   name: deploy-svc
 spec:
-  clusterIP: 10.96.100.100 # 가상 IP로 대체로 생략한다.
+  type: ClusterIP
+  clusterIP: 10.96.100.100
   selector:
     app: deploy-nginx # 해당 app명을 기준으로 Pod를 묶는다.
+  ports:
+  - protocol: TCP
+    port: 80 # clusterIP의 Port
+    targetPort: 80 # Pod들의 Port
+```
+
+![img](../Img/k8s_service4.png)<br>
+
+> kubectl create -f deploy-nginx.yaml
+
+Deploy로 Pod들을 생성한다.
+
+![img](../Img/k8s_service5.png)<br>
+
+> kubectl create -f service-exam.yaml
+
+서비스를 생성하자 등록된것을 볼 수 있다.
+
+![img](../Img/k8s_service6.png)<br>
+
+> kubectl describe svc deploy-svc
+
+Deploy Pod들의 IP들이 등록된것을 볼 수 있다.
+
+![img](../Img/k8s_service7.png)<br>
+
+> curl 10.96.100.100
+
+접속도 잘된다.<br>
+
+![img](../Img/k8s_service8.png)<br>
+
+테스트를 위해 각 Pod들에 접속해 html을 변경했다.<br>
+
+![img](../Img/k8s_service9.png)<br>
+
+LoadBalance같이 랜덤하게 동작하는 것을 볼 수 있다.<br>
+
+![img](../Img/k8s_service10.png)<br>
+
+또한, Deploy의 갯수를 늘리자 service도 자동으로 갯수가 늘어난다.<br>
+
+### (2) NodePort
+
+모든 Worknode를 대상으로 외부 접속 가능한 Port를 예약<br>
+Default NodePort 범위 : 30000 - 32767<br>
+ClusterIP를 생성 후 NodePort를 예약한다.<br>
+
+외부에 접속이 가능하도록 Port 번호를 할당한다.
+
+### NodePort yaml 파일
+
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: deploy-svc
+spec:
+  type: NodePort
+  clusterIP: 10.96.100.100
+  selector:
+    app: deploy-nginx
+  ports:
+  - protocol: TCP
+    port: 80 # clusterIP의 Port
+    targetPort: 80
+    nodePort: 30200 # 생략가능
+```
+
+![img](../Img/k8s_service11.png)<br>
+
+> kubectl create -f nodeport-exam.yaml
+
+![img](../Img/k8s_service12.png)<br>
+
+(3) LoadBalancer<br>
+AWS, Azure, GCP, OpenStack 등의 Public Cloud에서 적용<br>
+NodePort를 예약 후 해당 Nodeport로 외부 접근을 허용한다.<br>
+
+해당 외부 접근이 가능한 LoadBalancer를 구성하게된다.<br>
+
+### LoadBalancer yaml 파일
+
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: deploy-svc
+spec:
+  type: LoadBalancer
+  selector:
+    app: deploy-nginx
   ports:
   - protocol: TCP
     port: 80
     targetPort: 80
 ```
+
+![img](../Img/k8s_service13.png)<br>
+
+> kubectl create -f loadbalancr-exam.yaml
+
+LoadBalancer를 통해 CluseterIP, NodePort를 자동으로 구성해주고<br> 외부에 접속가능하게 LoadBalancer까지 구성해준다.<br>
+하지만, public 환경이 아니라서 외부 IP는 보류중으로 뜬다.<br>
+
+(4) ExternalName<br>
+클러스터 내부에서 외부에 접속시 사용할 도메인 등록<br>
+클러스터 도메인이 실제 외부 도메인으로 치환되어 동작<br>
+
+### ExternalName yaml 파일
+
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: external-svc
+spec:
+  type: ExternalName
+  externalName: google.com
+```
+
+![img](../Img/k8s_service14.png)<br>
+
+> curl external-svc.default.svc.cluster.local
+
+실제 google 사이트로 등록한 도메인으로 포워딩되어 들어가게된다.<br>

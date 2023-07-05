@@ -106,3 +106,7 @@ k8s를 배운다는건 k8s의 API를 배우는것이다.<br>
 ## [static Pod](../Document/k8s_staticPod.md)
 
 ## [Pod Resource 할당](../Document/k8s_PodResource.md)
+
+## [Controller](../Document/k8s_controller.md)
+
+## [Service](../Document/k8s_service.md)
