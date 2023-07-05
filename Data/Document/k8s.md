@@ -112,3 +112,7 @@ k8s를 배운다는건 k8s의 API를 배우는것이다.<br>
 ## [Service](../Document/k8s_service.md)
 
 ## [Headless Service](../Document/k8s_headlessService.md)
+
+## [Ingress 개념 및 설치](../Document/k8s_ingress.md)
+
+## [Ingress로 웹서비스 구현](../Document/k8s_ingress_WebServer.md)

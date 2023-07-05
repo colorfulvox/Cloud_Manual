@@ -46,6 +46,8 @@
 (6) [Controller](Data/Document/k8s_controller.md) : Replication, ReplicaSet, Deployment, DaemonSet, StatefulSet, Job, CronJob<br>
 (7) [Service](./Data/Document/k8s_service.md) : ClusterIP, NodePort, LoadBalancer, ExternalName<br>
 (8) [Headless Service](./Data/Document/k8s_headlessService.md)<br>
+(9) [Ingress 개념 및 설치](./Data/Document/k8s_ingress.md)<br>
+(10) [Ingress로 웹서비스 구현](./Data/Document/k8s_ingress_WebServer.md)<br>
 
 ## [OpenStack](Data/Document/OpenStack.md)
 
