@@ -74,6 +74,7 @@ spec:
                 name: pay-service
                 port:
                   number: 80
+  ingressClassName: nginx
 ```
 
 ### marvel-home yaml 파일
@@ -162,5 +163,6 @@ ingress도 실행한다.
 
 동작이 되는것을 확인한다.
 
-### 현재 포트포워딩이 안되어 서버 배포가 안된다...
+![img](../Img/k8s_ingress14.png)
 
+### 현재 포트포워딩이 안되어 외부에서 접근이 불가능하다..
