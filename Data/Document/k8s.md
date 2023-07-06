@@ -118,3 +118,7 @@ k8s를 배운다는건 k8s의 API를 배우는것이다.<br>
 ## [Ingress로 웹서비스 구현](../Document/k8s_ingress_WebServer.md)
 
 ## [Label + annotation](../Document/k8s_label%2Bannotation.md)
+
+## [Label을 활용한 Canary 배포](../Document/k8s_%5Blabel%5Dcanary.md)
+
+## [ConfigMap](../Document/k8s_configmap.md)
