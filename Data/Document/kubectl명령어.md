@@ -145,3 +145,7 @@ pod를 삭제한다.
 > kubectl port-forward webserver 8080:80
 
 포트포워드도 된다.<br>
+
+
+
+
