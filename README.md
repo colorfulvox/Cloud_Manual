@@ -50,7 +50,7 @@
 (10) [Ingress로 웹서비스 구현](./Data/Document/k8s_ingress_WebServer.md)<br>
 (11) [Label + annotation](./Data/Document/k8s_label%2Bannotation.md)<br>
 (12) [Label을 활용한 Canary 배포](./Data/Document/k8s_%5Blabel%5Dcanary.md)<br>
-(12) [ConfigMap](./Data/Document/k8s_configmap.md)<br>
+(13) [ConfigMap + Secret]
 
 ## [OpenStack](Data/Document/OpenStack.md)
 
