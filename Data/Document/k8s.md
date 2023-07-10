@@ -121,4 +121,4 @@ k8s를 배운다는건 k8s의 API를 배우는것이다.<br>
 
 ## [Label을 활용한 Canary 배포](../Document/k8s_%5Blabel%5Dcanary.md)
 
-## [ConfigMap + Secret]
+## [ConfigMap + Secret](./k8s_configmap%20%2B%20secret.md)
