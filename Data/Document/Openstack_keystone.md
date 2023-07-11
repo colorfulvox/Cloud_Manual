@@ -355,6 +355,7 @@ user role에 demo 계정을 추가한다.
 해당 명령어로 demo계정이 user role에 등록되었는지 확인할 수 있다.<br>
 
 ### (6) Token 발급 [Controller]
+
 Keystone을 통해서 Openstack 서비스를 이용하는 과정은 다음과 같다.
 
 ![img](../Img/openstack_114.png)<br>
@@ -399,6 +400,7 @@ export OS_PASSWORD=demopass
 export OS_AUTH_URL=http://192.168.56.101:5000/v3
 export OS_IDENTITY_API_VERSION=3
 ```
+
 다음과 같이 입력한다.
 
 ![img](../Img/openstack_118.png)<br>
@@ -432,4 +434,5 @@ demo 계정도 잘 받아지는지 확인한다.<br>
 ## [참고]
 
 ### 각 서비스를 설치한뒤 반드시 VM의 스냅샷을 찍어 기록해두자.
+
 Openstack 설치 과정에서 에러가 날 경우 다시 복원할 수 있어야한다.<br>

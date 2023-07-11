@@ -36,8 +36,8 @@ Glance를 설치하기전에 Keystone 서비스와 같이 Glance DB를 생성한
 
 > mysql -u root -popenstack<br>
 > CREATE DATABASE glance;<br>
-> GRANT ALL PRIVILEGES ON glance.* TO 'glance'@'localhost' IDENTIFIED BY 'glancedbpass';<br>
-> GRANT ALL PRIVILEGES ON glance.* TO 'glance'@'%' IDENTIFIED BY 'glancedbpass';<br>
+> GRANT ALL PRIVILEGES ON glance._ TO 'glance'@'localhost' IDENTIFIED BY 'glancedbpass';<br>
+> GRANT ALL PRIVILEGES ON glance._ TO 'glance'@'%' IDENTIFIED BY 'glancedbpass';<br>
 > exit;<br>
 
 과정은 Keystone과 비슷하다.<br>
@@ -136,10 +136,10 @@ project_name = service
 username = glance
 password = glancepass
 ```
+
 생성한 keystone에 대한 정보를 입력한다.<br>
 
 ![img](../Img/openstack_134.png)<br>
-
 
 > flavor = keystone
 
@@ -184,11 +184,13 @@ glance image-create --name "cirros" \
 --disk-format qcow2 --container-format bare \
 --visibility=public
 ```
+
 glance에 해당 이미지를 등록한다.<br>
 
 ---
 
 ### 코드 설명
+
 glance image-create --name : 생성할 이미지의 이름을 지정한다.<br>
 
 --file cirros-0.4.0-x86_64-disk.img : 어떤 이미지를 등록할지 지정한다.<br>
@@ -216,4 +218,5 @@ public으로 모든 사용자에게 공개된다.<br>
 ## [참고]
 
 ### 각 서비스를 설치한뒤 반드시 VM의 스냅샷을 찍어 기록해두자.
+
 Openstack 설치 과정에서 에러가 날 경우 다시 복원할 수 있어야한다.<br>
