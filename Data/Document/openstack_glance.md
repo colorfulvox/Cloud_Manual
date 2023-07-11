@@ -41,7 +41,7 @@ Glance를 설치하기전에 Keystone 서비스와 같이 Glance DB를 생성한
 > exit;<br>
 
 과정은 Keystone과 비슷하다.<br>
-glance에게 glancdDB의 사용권한을 주고 비밀번호는 glancedbpass로 설정했다.<br>
+glance에게 glancdDB의 사용권한을 주고 비밀번호는 glancedbpass로 설정한다.<br>
 
 ### (2) Glance 계정 생성 [Controller]
 
@@ -56,7 +56,7 @@ glance 계정을 생성하기 위해 admin으로 로그인한다.<br>
 > openstack user create --domain default --password-prompt glance
 
 glance 계정을 생성한다.<br>
-비밀번호는 glancepass로 설정했다.<br>
+비밀번호는 glancepass로 설정한다.<br>
 
 ![img](../Img/openstack_126.png)<br>
 
@@ -70,7 +70,7 @@ glance 계정에 admin role을 부여한다.<br>
 
 Glance 서비스를 생성한다.
 
-### (3) Glance 엔드포인트 URL설정[Controller]
+### (3) Glance 엔드포인트 URL설정 [Controller]
 
 ![img](../Img/openstack_128.png)<br>
 
@@ -84,7 +84,7 @@ Keystone을 생성할때는 bootstrap으로 엔드포인트를 생성했지만,<
 CLI 방식으로는 다음과 같이 엔드포인트를 생성할 수 있다.<br>
 여기서도 공개 URL, 내부 URL, 관리자URL을 생성했다.<br>
 
-### (4) Glance 설치 및 환경 설정[Controller]
+### (4) Glance 설치 및 환경 설정 [Controller]
 
 ![img](../Img/openstack_129.png)<br>
 
@@ -161,7 +161,7 @@ DB와의 동기화를 진행한다.<br>
 
 glance를 재시작하고 정상적으로 작동하는지 확인한다.<br>
 
-### (5) 이미지를 glance에 저장하기 [Controller]
+### (5) 이미지를 glance에 등록하기 [Controller]
 
 ![img](../Img/openstack_137.png)<br>
 
