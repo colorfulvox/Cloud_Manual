@@ -26,6 +26,8 @@ Openstack은 OS가 프로세스를 처리할때 스케줄링을 하는것처럼
   - Storage : SATA 20GB(운영체제), 8GB(블록 Storage), 8GB \* 3 (오브젝트 Storage)
   - Ubuntu : ubuntu-20.04.6-live-server-amd64
 
+## 시작
+
 ### (1) RabbitMQ 설치 [Controller]
 
 ![img](../Img/openstack_67.png)<br>
@@ -84,3 +86,8 @@ http://192.168.56.101:15672/ 으로 접속한뒤
 사용자 계정 및 비밀번호를 입력 후 로그인한다.<br>
 
 ![img](../Img/openstack_74.png)<br>
+
+## [참고]
+
+### 각 서비스를 설치한뒤 반드시 VM의 스냅샷을 찍어 기록해두자.
+Openstack 설치 과정에서 에러가 날 경우 다시 복원할 수 있어야한다.<br>

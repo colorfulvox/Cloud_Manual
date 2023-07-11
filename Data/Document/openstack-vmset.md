@@ -2,6 +2,8 @@
 
 # OpenStack 가상 머신 설정
 
+## 시작
+
 ### 1. VM 구성 및 우분투 설치
 
 ![img](../Img/openstack3.png)<br>

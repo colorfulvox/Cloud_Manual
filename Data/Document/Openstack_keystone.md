@@ -25,6 +25,8 @@ keystone은 주로 Controller에 설치한다.<br>
   - Storage : SATA 20GB(운영체제), 8GB(블록 Storage), 8GB \* 3 (오브젝트 Storage)
   - Ubuntu : ubuntu-20.04.6-live-server-amd64
 
+## 시작
+
 ### (1) Memcached 설치 [Controller]
 
 Keystone은 많은 사용자와 프로젝트에 대한 인증 정보를 관리하고 처리해야한다.<br>
@@ -427,3 +429,7 @@ Controller의 Keystone에게 요청해보자.<br>
 
 demo 계정도 잘 받아지는지 확인한다.<br>
 
+## [참고]
+
+### 각 서비스를 설치한뒤 반드시 VM의 스냅샷을 찍어 기록해두자.
+Openstack 설치 과정에서 에러가 날 경우 다시 복원할 수 있어야한다.<br>

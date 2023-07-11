@@ -18,6 +18,12 @@ Block Storage Node는 인스턴스에 연결되는 하드 디스크를 <br>생�
 
 Object Storage Node는 파일을 관리하는 노드로 오픈스택 서비스중 Swift를 설치한다.<br>
 
+## [참고]
+
+### 각 서비스를 설치한뒤 반드시 VM의 스냅샷을 찍어 기록해두자.
+Openstack 설치 과정에서 에러가 날 경우 다시 복원할 수 있어야한다.<br>
+
+
 ## 환경
 
 - Openstack : yoga
@@ -45,3 +51,5 @@ Object Storage Node는 파일을 관리하는 노드로 오픈스택 서비스�
 ## [Openstack 메시지 큐 RabbitMQ 설치](../Document/Openstack%20%EB%A9%94%EC%8B%9C%EC%A7%80%20%ED%81%90%20RabbitMQ%20%EC%84%A4%EC%B9%98.md)
 
 ## [인증서비스 KeyStone 설치](../Document/Openstack_keystone.md)
+
+## [이미지 관리 서비스 Glance 설치](./openstack_glance.md)

@@ -63,5 +63,6 @@
 - [Openstack패키지 설치 및 DB 구성](<Data/Document/Openstack패키지 설치 및 DB 구성.md>)
 - [Openstack 메시지 큐 RabbitMQ 설치](<Data/Document/Openstack 메시지 큐 RabbitMQ 설치.md>)
 - [인증서비스 KeyStone 설치](Data/Document/Openstack_keystone.md)
+- [이미지 관리 서비스 Grance 설치](Data/Document/openstack_glance.md)
 
 ## [Linux 팁](Data/Document/Linux.md)

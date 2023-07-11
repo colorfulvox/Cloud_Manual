@@ -26,6 +26,8 @@ Openstack 패키지 중 yoga를 설치하고
   - Storage : SATA 20GB(운영체제), 8GB(블록 Storage), 8GB \* 3 (오브젝트 Storage)
   - Ubuntu : ubuntu-20.04.6-live-server-amd64
 
+## 시작
+
 ### (1) Yoga 설치 [Controller, Compute]
 
 ![img](../Img/openstack_51.png)<br>
@@ -145,3 +147,8 @@ mariaDB처럼 mongodb도 환경 설정을 수행<br>
 > service mongodb status<br>
 
 mongodb를 재시작하고 정상적으로 동작하는지 확인<br>
+
+## [참고]
+
+### 각 서비스를 설치한뒤 반드시 VM의 스냅샷을 찍어 기록해두자.
+Openstack 설치 과정에서 에러가 날 경우 다시 복원할 수 있어야한다.<br>
