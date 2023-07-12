@@ -34,16 +34,18 @@ Glance를 설치하기전에 Keystone 서비스와 같이 Glance DB를 생성한
 
 ![img](../Img/openstack_123.png)<br>
 
-> mysql -u root -popenstack<br>
-> CREATE DATABASE glance;<br>
-> GRANT ALL PRIVILEGES ON glance._ TO 'glance'@'localhost' IDENTIFIED BY 'glancedbpass';<br>
-> GRANT ALL PRIVILEGES ON glance._ TO 'glance'@'%' IDENTIFIED BY 'glancedbpass';<br>
-> exit;<br>
+```
+mysql -u root -popenstack
+CREATE DATABASE glance;
+GRANT ALL PRIVILEGES ON glance.* TO 'glance'@'localhost' IDENTIFIED BY 'glancedbpass';
+GRANT ALL PRIVILEGES ON glance.* TO 'glance'@'%' IDENTIFIED BY 'glancedbpass';
+exit;
+```
 
 과정은 Keystone과 비슷하다.<br>
 glance에게 glancdDB의 사용권한을 주고 비밀번호는 glancedbpass로 설정한다.<br>
 
-### (2) Keystone에 Glance 계정 생성 [Controller]
+### (2) Keystone인증을 위한 Glance 계정 생성 [Controller]
 
 ![img](../Img/openstack_124.png)<br>
 

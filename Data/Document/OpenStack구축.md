@@ -53,3 +53,7 @@ Openstack 설치 과정에서 에러가 날 경우 다시 복원할 수 있어�
 ## [인증서비스 KeyStone 설치](../Document/Openstack_keystone.md)
 
 ## [이미지 관리 서비스 Glance 설치](./openstack_glance.md)
+
+## [컴퓨팅 서비스 자원 관리 Placement](./openstack_placement.md)
+
+## [Compute 서비스 Nova](./openstack_nova.md)

@@ -64,6 +64,7 @@
 - [Openstack 메시지 큐 RabbitMQ](<Data/Document/Openstack 메시지 큐 RabbitMQ 설치.md>)
 - [인증서비스 KeyStone](Data/Document/Openstack_keystone.md)
 - [이미지 관리 서비스 Grance](Data/Document/openstack_glance.md)
+- [컴퓨팅 서비스 자원 관리 Placement](Data/Document/openstack_placement.md)
 - [Compute 서비스 Nova](Data/Document/openstack_nova.md)
 
 ## [Linux 팁](Data/Document/Linux.md)

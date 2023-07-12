@@ -67,7 +67,7 @@ GRANT ALL PRIVILEGES ON nova_cell0.* TO 'nova'@'%' IDENTIFIED BY 'novadbpass';
 각 DB에 대한 액세스 권한을 부여한다.<br>
 여기서는 비밀번호를 novadbpass로 한다.<br>
 
-### (2) Keystone에 Nova 계정 생성 [Controller]
+### (2) Keystone인증을 위한 Nova 계정 생성 [Controller]
 
 ![img](../Img/openstack_143.png)<br>
 
@@ -178,8 +178,10 @@ VNC 프록시 클라이언트는 VNC 서버와 VNC 클라이언트 <br>사이에
 
 ![img](../Img/openstack_155.png)<br>
 
-> api_servers = http://192.168.56.101:9292 > [glance] 섹션에서<br>
-> 이미지 관리 서비스인 glance의 서버 주소를 설정한다.
+> api_servers = http://192.168.56.101:9292
+
+[glance] 섹션에서<br>
+이미지 관리 서비스인 glance의 서버 주소를 설정한다.
 
 ![img](../Img/openstack_156.png)<br>
 
@@ -209,6 +211,21 @@ password = novapass
 > auth_strategy = keystone
 
 [api] 섹션
+
+![img](../Img/openstack_185.png)<br>
+
+```
+region_name = RegionOne
+project_domain_name = Default
+project_name = service
+auth_type = password
+user_domain_name = Default
+auth_url = http://192.168.56.101:5000/v3
+username = placement
+password = placementpass
+```
+
+[placement] 섹션에서 placement 설정을 한다.
 
 ### (5) DB 연동 [Controller]
 
