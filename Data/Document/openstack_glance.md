@@ -43,7 +43,7 @@ Glance를 설치하기전에 Keystone 서비스와 같이 Glance DB를 생성한
 과정은 Keystone과 비슷하다.<br>
 glance에게 glancdDB의 사용권한을 주고 비밀번호는 glancedbpass로 설정한다.<br>
 
-### (2) Glance 계정 생성 [Controller]
+### (2) Keystone에 Glance 계정 생성 [Controller]
 
 ![img](../Img/openstack_124.png)<br>
 

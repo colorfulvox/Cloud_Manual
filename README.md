@@ -61,8 +61,9 @@
 
 - [가상 머신 생성 및 환경 설정](<Data/Document/가상 머신 생성 및 환경 설정.md>)
 - [Openstack패키지 설치 및 DB 구성](<Data/Document/Openstack패키지 설치 및 DB 구성.md>)
-- [Openstack 메시지 큐 RabbitMQ 설치](<Data/Document/Openstack 메시지 큐 RabbitMQ 설치.md>)
-- [인증서비스 KeyStone 설치](Data/Document/Openstack_keystone.md)
-- [이미지 관리 서비스 Grance 설치](Data/Document/openstack_glance.md)
+- [Openstack 메시지 큐 RabbitMQ](<Data/Document/Openstack 메시지 큐 RabbitMQ 설치.md>)
+- [인증서비스 KeyStone](Data/Document/Openstack_keystone.md)
+- [이미지 관리 서비스 Grance](Data/Document/openstack_glance.md)
+- [Compute 서비스 Nova](Data/Document/openstack_nova.md)
 
 ## [Linux 팁](Data/Document/Linux.md)
