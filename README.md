@@ -31,7 +31,7 @@
 
 ## [K8s](Data/Document/k8s.md)
 
-(1) [k8s 설치](//Data/Document/k8s%20%EC%84%A4%EC%B9%98.md)<br>
+(1) [k8s 설치](Data/Document/k8s_설치.md)<br>
 (2) [kubectl 명령어](Data/Document/kubectl명령어.md)<br>
 (3) [namespace](Data/Document/k8s_namespace.md)<br>
 (4) [yaml 템플릿](Data/Document/k8s_yaml.md)<br>

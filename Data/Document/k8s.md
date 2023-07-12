@@ -46,7 +46,7 @@ VM은 OS와 하드웨어 사이의 Hypervisor로 추상화 연결을 제공하�
 5. 선언적 API : k8s운영자는 K8s에게 요청만하면 된다.<br>
    웹서버 2개를 실행해달라 요청하면 K8s가 알아서 서버2개를 실행하고 관리한다.
 
-## [k8s 설치](../Document/k8s%20%EC%84%A4%EC%B9%98.md)
+## [k8s 설치](../Document/k8s_설치.md)
 
 ## [kubectl 명령어](../Document/kubectl%EB%AA%85%EB%A0%B9%EC%96%B4.md)
 
