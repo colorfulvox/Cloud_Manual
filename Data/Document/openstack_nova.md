@@ -272,16 +272,6 @@ service nova-conductor status
 service nova-novncproxy status
 ```
 
----
-
-## [참고]
-
-### 각 서비스를 설치한뒤 반드시 VM의 스냅샷을 찍어 기록해두자.
-
-Openstack 설치 과정에서 에러가 날 경우 다시 복원할 수 있어야한다.<br>
-
----
-
 ## [Compute]
 
 VM을 통해 가상 머신 인스턴스를 생성하고 관리하는 데몬(KVM, QEMU)인<br> Nova-Compute를 설치 한다.
@@ -412,3 +402,9 @@ openstack에 현재 compute 노드의 nova-compute가
 > openstack compute service list
 
 Compute node에서도 Compute 서비스들이 리스트에 뜨는지 확인한다.<br>
+
+## [참고]
+
+### 각 서비스를 설치한뒤 반드시 VM의 스냅샷을 찍어 기록해두자.
+
+Openstack 설치 과정에서 에러가 날 경우 다시 복원할 수 있어야한다.<br>
