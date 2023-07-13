@@ -26,10 +26,6 @@ Openstack의 메인 서비스인 Nova<br>
   - Storage : SATA 20GB(운영체제), 8GB(블록 Storage), 8GB \* 3 (오브젝트 Storage)
   - Ubuntu : ubuntu-20.04.6-live-server-amd64
 
-### [Compute]
-
-Nova-Compute : VM을 통해 가상 머신 인스턴스를 생성하고 관리하는 데몬<br> (KVM, QEMU)
-
 ## 시작
 
 ## [Controller]
@@ -287,3 +283,132 @@ Openstack 설치 과정에서 에러가 날 경우 다시 복원할 수 있어�
 ---
 
 ## [Compute]
+
+VM을 통해 가상 머신 인스턴스를 생성하고 관리하는 데몬(KVM, QEMU)인<br> Nova-Compute를 설치 한다.
+
+### (1) Nova-Compute 설치 및 설정 [Compute]
+
+![img](../Img/openstack_186.png)<br>
+
+> apt install nova-compute
+
+패키지를 설치한다.
+
+![img](../Img/openstack_196.png)<br>
+
+> egrep -c '(vmx|svm)' /proc/cpuinfo
+
+설정을 구성하기전에 Compute 노드가 VM을 지원하는지 확인하다.<br>
+여기서 0이 뜨면 가상 머신을 지원하지 않는다.<br>
+가상 머신을 지원하지 않으면 설정 파일에서 추가적으로 설정해야한다.<br>
+
+![img](../Img/openstack_187.png)<br>
+
+> vi /etc/nova/nova.conf
+
+설치가 완료되면 설정 파일에 들어간다.
+
+![img](../Img/openstack_188.png)<br>
+
+```
+my_ip = 192.168.56.102
+transport_url = rabbit://openstack:rabbitpass@192.168.56.101
+```
+
+![img](../Img/openstack_189.png)<br>
+
+> auth_strategy = keystone
+
+![img](../Img/openstack_190.png)<br>
+
+> api_servers = http://192.168.56.101:9292
+
+![img](../Img/openstack_191.png)<br>
+
+```
+www_authenticate_uri = http://192.168.56.101:5000/
+auth_url = http://192.168.56.101:5000/
+memcached_servers = 192.168.56.101:11211
+auth_type = password
+project_domain_name = Default
+user_domain_name = Default
+project_name = service
+username = nova
+password = novapass
+```
+
+![img](../Img/openstack_192.png)<br>
+
+> lock_path = /var/lib/nova/tmp
+
+![img](../Img/openstack_193.png)<br>
+
+```
+region_name = RegionOne
+project_domain_name = Default
+project_name = service
+auth_type = password
+user_domain_name = Default
+auth_url = http://192.168.56.101:5000/v3
+username = placement
+password = placementpass
+```
+
+![img](../Img/openstack_194.png)<br>
+
+```
+enabled = true
+server_listen = 0.0.0.0
+server_proxyclient_address = 192.168.56.102
+novncproxy_base_url = http://192.168.56.101:6080/vnc_auto.html
+```
+
+![img](../Img/openstack_195.png)<br>
+
+```
+send_service_user_token = true
+auth_url = https://192.168.56.101/identity
+auth_strategy = keystone
+auth_type = password
+project_domain_name = Default
+project_name = service
+user_domain_name = Default
+username = nova
+password = novapass
+```
+
+### 가상 머신을 지원하지 않을 경우
+
+![img](../Img/openstack_197.png)<br>
+
+> virt_type = qemu
+
+![img](../Img/openstack_198.png)<br>
+
+> service nova-compute restart<br>
+> service nova-compute status
+
+저장한뒤,<br>
+nova-compute를 재시작하고 정상적으로 실행하는지 확인한다.<br>
+
+### (2) Nova-Compute 실행 확인 [Controller]
+
+![img](../Img/openstack_199.png)<br>
+
+> . adminrc.sh
+
+관리자 계정으로 접속한다.
+
+![img](../Img/openstack_200.png)<br>
+
+> openstack compute service list --service nova-compute
+
+openstack에 현재 compute 노드의 nova-compute가
+리스트에 뜨는지 확인한다.<br>
+
+[compute]<br>
+![img](../Img/openstack_201.png)<br>
+
+> openstack compute service list
+
+Compute node에서도 Compute 서비스들이 리스트에 뜨는지 확인한다.<br>
