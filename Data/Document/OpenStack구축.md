@@ -59,3 +59,5 @@ Openstack 설치 과정에서 에러가 날 경우 다시 복원할 수 있어�
 ## [Compute 서비스 Nova](./openstack_nova.md)
 
 ## [네트워크 서비스 Neutron](./openstack_neutron.md)
+
+## [대시보드 Horizon](./openstack_horizon.md)

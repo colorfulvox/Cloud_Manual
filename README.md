@@ -67,5 +67,9 @@
 - [컴퓨팅 자원 관리 서비스 Placement](Data/Document/openstack_placement.md)
 - [Compute 서비스 Nova](Data/Document/openstack_nova.md)
 - [네트워크 서비스 Neutron](Data/Document/openstack_neutron.md)
+- [추가 서비스] -----------------------------
+  - [대시보드 Horizon](Data/Document/openstack_horizon.md)
+
+(5) [OpenStack 운영]
 
 ## [Linux 팁](Data/Document/Linux.md)
