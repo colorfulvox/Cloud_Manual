@@ -99,7 +99,7 @@ Keystone 인증 URL을 변경하고 시간을 한국으로 변경한다.<br>
 
 ![img](../Img/openstack_260.png)
 
-http://192.168.56.101/horizon/에 접속한다.<br>
+http://192.168.56.101/horizon/ 에 접속한다.<br>
 그리고 다음과 같이 입력하고 로그인한다.<br>
 
 ![img](../Img/openstack_261.png)
