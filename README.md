@@ -70,6 +70,9 @@
 - [추가 서비스] -----------------------------
   - [대시보드 Horizon](Data/Document/openstack_horizon.md)
 
-(5) [OpenStack 운영]
+(5) OpenStack 운영
+
+- [프로젝트 생성](Data/Document/openstack_oper_project.md)
+- [네트워크 생성](Data/Document/openstack_oper_network.md)
 
 ## [Linux 팁](Data/Document/Linux.md)
