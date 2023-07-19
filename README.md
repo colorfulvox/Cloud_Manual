@@ -74,5 +74,6 @@
 
 - [프로젝트 생성](Data/Document/openstack_oper_project.md)
 - [네트워크 생성](Data/Document/openstack_oper_network.md)
+- [이미지 등록](Data/Document/openstack_oper_image.md)
 
 ## [Linux 팁](Data/Document/Linux.md)
