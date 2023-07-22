@@ -36,9 +36,13 @@ Glance를 설치하기전에 Keystone 서비스와 같이 Glance DB를 생성한
 
 ```
 mysql -u root -popenstack
+
 CREATE DATABASE glance;
+
 GRANT ALL PRIVILEGES ON glance.* TO 'glance'@'localhost' IDENTIFIED BY 'glancedbpass';
+
 GRANT ALL PRIVILEGES ON glance.* TO 'glance'@'%' IDENTIFIED BY 'glancedbpass';
+
 exit;
 ```
 
@@ -76,11 +80,11 @@ Glance 서비스를 생성한다.
 
 ![img](../Img/openstack_128.png)<br>
 
-> openstack endpoint create --region RegionOne image public http://192.168.56.101:9292
+> openstack endpoint create --region RegionOne image public http://controller:9292
 
-> openstack endpoint create --region RegionOne image internal http://192.168.56.101:9292
+> openstack endpoint create --region RegionOne image internal http://controller:9292
 
-> openstack endpoint create --region RegionOne image admin http://192.168.56.101:9292
+> openstack endpoint create --region RegionOne image admin http://controller:9292
 
 Keystone을 생성할때는 bootstrap으로 엔드포인트를 생성했지만,<br>
 CLI 방식으로는 다음과 같이 엔드포인트를 생성할 수 있다.<br>
@@ -102,7 +106,7 @@ Glance를 설치한다.<br>
 
 ![img](../Img/openstack_131.png)<br>
 
-> connection = mysql+pymysql://glance:glancedbpass@192.168.56.101/glance
+> connection = mysql+pymysql://glance:glancedbpass@controller/glance
 
 keystone과 같이 DB 연결 설정부터 한다.
 
@@ -128,9 +132,9 @@ default_store는 기본 저장 방식을 지정한다.<br>
 ![img](../Img/openstack_133.png)<br>
 
 ```
-www_authenticate_uri = http://192.168.56.101:5000
-auth_url = http://192.168.56.101:5000
-memcached_servers = 192.168.56.101:11211
+www_authenticate_uri = http://controller:5000
+auth_url = http://controller:5000
+memcached_servers = controller:11211
 auth_type = password
 project_domain_name = Default
 user_domain_name = Default

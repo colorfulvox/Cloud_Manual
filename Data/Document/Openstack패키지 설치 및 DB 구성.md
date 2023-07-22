@@ -30,12 +30,6 @@ Openstack 패키지 중 yoga를 설치하고
 
 ### (1) Yoga 설치 [Controller, Compute]
 
-![img](../Img/openstack_51.png)<br>
-
-> apt-get install software-properties-common
-
-소프트웨어 저장소 관리를 설치
-
 ![img](../Img/openstack_53.png)<br>
 
 > add-apt-repository cloud-archive:yoga
@@ -85,7 +79,7 @@ python3-pymysql : Python에서 MySQL DB와 상호 작용하기 위한 패키지<
 
 ![img](../Img/openstack_58.png)<br>
 
-> vi /etc/mysql/conf.d/openstack.cnf
+> vi /etc/mysql/mariadb.conf.d/99-openstack.cnf
 
 MariaDB에 Openstack 서버의 설정을 하기위해 설정파일을 생성 <br>
 
@@ -96,7 +90,9 @@ MariaDB에 Openstack 서버의 설정을 하기위해 설정파일을 생성 <br
 >
 > default-storage-engine = innodb<br> # MariaDB에서 사용할 기본 스토리지 엔진을 지정<br> # innodb는 트랜잭션 지원 및 높은 안정성을 제공하는 스토리지 엔진<br>
 >
-> innodb_file_per_table<br> \# InnoDB 스토리지 엔진이 각 테이블을 별도의 파일로 저장하도록 설정함<br> # 이 설정을 통해 테이블 간의 공간을 더욱 효율적인 관리가 가능<br>
+> innodb_file_per_table = on<br> \# InnoDB 스토리지 엔진이 각 테이블을 별도의 파일로 저장하도록 설정함<br> # 이 설정을 통해 테이블 간의 공간을 더욱 효율적인 관리가 가능<br>
+>
+> max_connections = 4096<br> \# 최대 4096개의 동시 연결을 허용한다.
 >
 > collation-server = utf8_general_ci<br> \# 정렬 규칙을 설정함 <br> \# utf8_general_ci는 UTF-8 문자 인코딩을 사용하고, 일반적인(대소문자를 구분하지 않는) 비교 및 정렬 규칙<br>
 >
@@ -116,39 +112,8 @@ mariaDB 서버의 보안 설정을 한다.<br>
 
 ![img](../Img/openstack_62.png)<br>
 
-### (3) MongoDB 설치 [Controller]
-
-Opentstack의 Ceilometer는 자원 모니터링을 수집함
-해당 수집 정보를 저장할 DB가 필요하다.<br>
-로그 정보를 저장하기에 비관계형 MongoDB를 설치<br>
-
-![img](../Img/openstack_63.png)<br>
-
-> apt-get install mongodb-server mongodb-clients python3-pymongo
-
-mongoDB 설치<br>
-
-![img](../Img/openstack_64.png)<br>
-
-> vi /etc/mongodb.conf
-
-mariaDB처럼 mongodb도 환경 설정을 수행<br>
-
-![img](../Img/openstack_65.png)<br>
-
-해당 부분을 수정<br>
-
-기본적으로 mongoDB는 저널링을 생성할때 크기가 1GB인 저널 파일을 생성함<br> smallfiles = true로 설정하면 저널 파일의 크기를 128MB까지 줄일 수 있음<br>
-저널링 : MongoDB의 데이터 변경 작업을 로그로 기록하는것<br>
-
-![img](../Img/openstack_66.png)<br>
-
-> service mongodb restart<br>
-> service mongodb status<br>
-
-mongodb를 재시작하고 정상적으로 동작하는지 확인<br>
-
 ## [참고]
 
 ### 각 서비스를 설치한뒤 반드시 VM의 스냅샷을 찍어 기록해두자.
+
 Openstack 설치 과정에서 에러가 날 경우 다시 복원할 수 있어야한다.<br>

@@ -58,33 +58,10 @@ memcached의 환경을 설정한다.<br>
 
 재시작하고 정상적으로 실행하는지 확인한다.
 
-### (2) MariaDB 설정 및 Keystone DB 생성 [Controller]
+### (2) Keystone DB 생성 [Controller]
 
 Openstack의 서비스를 설치하기전 MariaDB에 서비스 관련 DB를 생성한다.<br>
 (서비스의 구성과 데이터 관리를 원할하게 수행하기 위함)<br>
-
-DB 생성전에 Openstack에 맞는 DB설정을 한다.<br>
-
-![img](../Img/openstack_79.png)<br>
-
-> cd /etc/mysql/mariadb.conf.d<br>
-> vi 50-server.cnf
-
-mariadb설정 폴더에 들어간뒤 mariaDB를 설정 한다.<br>
-50-server은 mariaDB 서버의 기본 설정을 정의하는 파일이다.<br>
-
-![img](../Img/openstack_80.png)<br>
-
-bind-address를 주석 처리한다.<br>
-(mariaDB가 실행될때 50-server.cnf파일을 먼저 읽고<br> openstack.cnf 파일의 bind-address를 무시해 주석 처리한다.)<br>
-
-![img](../Img/openstack_89.png)<br>
-
-> service mysql restart
-
-mariaDB를 재시작 한다.<br>
-
-![img](../Img/openstack_81.png)<br>
 
 > mysql -u root -popenstack
 
@@ -114,14 +91,9 @@ keystone 사용자가 모든 호스트에서 접근할 수 있는 권한을 부�
 
 ![img](../Img/openstack_83.png)<br>
 
-> apt-get install keystone apache2 libapache2-mod-wsgi-py3
+> apt-get install keystone
 
-keystone과 관련 패키지를 설치한다.
-
-apache2 : 클라이언트의 요청을 처리하고 keystone 서비스를 실행하기 위해 Apache HTTP Server와의 통합이 필요하다.<br>
-
-libapache2-mod-wsgi-py3 : Apache HTTP Server에서 Python 웹 애플리케이션을<br> 실행하기 위한 WSGI 모듈이다.<br>
-Keystone의 Python 코드를 Apache HTTP Server와 통합하기 위해 사용된다.<br>
+keystone 패키지를 설치한다.
 
 ![img](../Img/openstack_84.png)<br>
 
@@ -135,7 +107,7 @@ memcache_servers를 찾아 주석을 푼뒤 IP를 설정한다.<br>[cache] 항�
 
 ![img](../Img/openstack_86.png)<br>
 
-> connection = mysql+pymysql://keystone:keystonedbpass@192.168.56.101/keystone
+> connection = mysql+pymysql://keystone:keystonedbpass@controller/keystone
 
 아까 설정한 mariaDB에 접근할 수 있게 설정한다.<br>
 
@@ -189,7 +161,7 @@ apache 설정 파일을 연다.
 
 ![img](../Img/openstack_97.png)<br>
 
-> ServerName 192.168.56.101
+> ServerName controller
 
 ServerName을 Controller IP로 설정한다.<br>
 
@@ -215,9 +187,9 @@ apache를 다시 시작하고 실행하는지 확인한다.
 
 ```
 keystone-manage bootstrap --bootstrap-password 'adminpass' \
---bootstrap-admin-url http://$controller:5000/v3/ \
---bootstrap-internal-url http://$controller:5000/v3/ \
---bootstrap-public-url http://$controller:5000/v3/ \
+--bootstrap-admin-url http://controller:5000/v3/ \
+--bootstrap-internal-url http://controller:5000/v3/ \
+--bootstrap-public-url http://controller:5000/v3/ \
 --bootstrap-region-id RegionOne
 ```
 
@@ -397,7 +369,7 @@ export OS_USER_DOMAIN_NAME=default
 export OS_PROJECT_NAME=demo
 export OS_USERNAME=demo
 export OS_PASSWORD=demopass
-export OS_AUTH_URL=http://192.168.56.101:5000/v3
+export OS_AUTH_URL=http://controller:5000/v3
 export OS_IDENTITY_API_VERSION=3
 ```
 

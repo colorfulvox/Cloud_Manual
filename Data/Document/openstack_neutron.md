@@ -57,9 +57,13 @@ Keystone의 사용자, 서비스, 엔드포인트를 설정한다. <br>
 
 ```
 mysql -u root -popenstack
+
 CREATE DATABASE neutron;
+
 GRANT ALL PRIVILEGES ON neutron.* TO 'neutron'@'localhost' IDENTIFIED BY 'neutrondbpass';
+
 GRANT ALL PRIVILEGES ON neutron.* TO 'neutron'@'%' IDENTIFIED BY 'neutrondbpass';
+
 exit;
 ```
 
@@ -77,9 +81,9 @@ DB 생성, 비밀번호는 neutrondbpass로 설정한다.<br>
 
 > openstack role add --project service --user neutron admin<br>
 > openstack service create --name neutron --description "OpenStack Networking" network<br>
-> openstack endpoint create --region RegionOne network public http://192.168.56.101:9696<br>
-> openstack endpoint create --region RegionOne network internal http://192.168.56.101:9696<br>
-> openstack endpoint create --region RegionOne network admin http://192.168.56.101:9696<br>
+> openstack endpoint create --region RegionOne network public http://controller:9696<br>
+> openstack endpoint create --region RegionOne network internal http://controller:9696<br>
+> openstack endpoint create --region RegionOne network admin http://controller:9696<br>
 
 관리자 권한을 부여하고, 서비스 생성 및 엔드 포인트를 설정한다.<br>
 
@@ -139,7 +143,7 @@ neutron 설정 파일에 들어간다.
 ```
 service_plugins = router
 allow_overlapping_ips = true
-transport_url = rabbit://openstack:rabbitpass@192.168.56.101
+transport_url = rabbit://openstack:rabbitpass@controller
 auth_strategy = keystone
 
 notify_nova_on_port_status_changes = true
@@ -162,7 +166,7 @@ Neutron의 포트 데이터 변경시 Nova에게 알려준다.<br>
 
 ![img](../Img/openstack_208.png)<br>
 
-> connection = mysql+pymysql://neutron:neutrondbpass@192.168.56.101/neutron
+> connection = mysql+pymysql://neutron:neutrondbpass@controller/neutron
 
 ![img](../Img/openstack_209.png)<br>
 
@@ -420,9 +424,9 @@ connection을 주석 처리한다.
 ![img](../Img/openstack_237.png)<br>
 
 ```
-www_authenticate_uri = http://192.168.56.101:5000
-auth_url = http://192.168.56.101:5000
-memcached_servers = 192.168.56.101:11211
+www_authenticate_uri = http://controller:5000
+auth_url = http://controller:5000
+memcached_servers = controller:11211
 auth_type = password
 project_domain_name = default
 user_domain_name = default

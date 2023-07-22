@@ -35,9 +35,13 @@ Nova, neutron, cinder 등 컴퓨팅 서비스와 관련된
 
 ```
 mysql -u root -popenstack
+
 CREATE DATABASE placement;
+
 GRANT ALL PRIVILEGES ON placement.* TO 'placement'@'localhost' IDENTIFIED BY 'placementdbpass';
+
 GRANT ALL PRIVILEGES ON placement.* TO 'placement'@'%' IDENTIFIED BY 'placementdbpass';
+
 exit;
 ```
 
@@ -73,9 +77,11 @@ placement 서비스를 생성한다.<br>
 ![img](../Img/openstack_174.png)<br>
 
 ```
-openstack endpoint create --region RegionOne placement public http://192.168.56.101:8778
-openstack endpoint create --region RegionOne placement internal http://192.168.56.101:8778
-openstack endpoint create --region RegionOne placement admin http://192.168.56.101:8778
+openstack endpoint create --region RegionOne placement public http://controller:8778
+
+openstack endpoint create --region RegionOne placement internal http://controller:8778
+
+openstack endpoint create --region RegionOne placement admin http://controller:8778
 ```
 
 EndPoint URL를 설정한다.<br>
@@ -103,8 +109,8 @@ placement 구성 파일에 들어간다.<br>
 ![img](../Img/openstack_178.png)<br>
 
 ```
-auth_url = http://192.168.56.101:5000/v3
-memcached_servers = 192.168.56.101:11211
+auth_url = http://controller:5000/v3
+memcached_servers = controller:11211
 auth_type = password
 project_domain_name = Default
 user_domain_name = Default
@@ -117,7 +123,7 @@ password = placementpass
 
 ![img](../Img/openstack_179.png)<br>
 
-> connection = mysql+pymysql://placement:placementdbpass@192.168.56.101/placement
+> connection = mysql+pymysql://placement:placementdbpass@controller/placement
 
 [placement_database] 섹션에서 DB를 설정한뒤 저장한다.
 

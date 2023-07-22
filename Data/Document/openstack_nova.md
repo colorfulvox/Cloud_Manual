@@ -92,9 +92,9 @@ Nova 서비스를 생성한다.<br>
 
 ![img](../Img/openstack_147.png)<br>
 
-> openstack endpoint create --region RegionOne compute public http://192.168.56.101:8774/v2.1<br>
-> openstack endpoint create --region RegionOne compute public http://192.168.56.101:8774/v2.1<br>
-> openstack endpoint create --region RegionOne compute admin http://192.168.56.101:8774/v2.1
+> openstack endpoint create --region RegionOne compute public http://controller:8774/v2.1
+> openstack endpoint create --region RegionOne compute internal http://controller:8774/v2.1
+> openstack endpoint create --region RegionOne compute admin http://controller:8774/v2.1
 
 Endpoint URL를 설정한다.<br>
 
@@ -124,19 +124,19 @@ nova 구성 파일에 들어간다.<br>
 
 ![img](../Img/openstack_150.png)<br>
 
-> connection = mysql+pymysql://nova:novadbpass@192.168.56.101/nova_api
+> connection = mysql+pymysql://nova:novadbpass@controller/nova_api
 
 [api_database] 섹션에 입력한다.
 
 ![img](../Img/openstack_151.png)<br>
 
-> connection = mysql+pymysql://nova:novadbpass@192.168.56.101/nova
+> connection = mysql+pymysql://nova:novadbpass@controller/nova
 
 [database] 섹션에 입력한다.
 
 ![img](../Img/openstack_152.png)<br>
 
-> transport_url = rabbit://openstack:rabbitpass@192.168.56.101:5672/<br>
+> transport_url = rabbit://openstack:rabbitpass@controller:5672/<br>
 > my_ip = 192.168.56.101
 
 맨 상단의 [Default] 섹션에 rabbit도 연동한다.
@@ -144,9 +144,9 @@ nova 구성 파일에 들어간다.<br>
 ![img](../Img/openstack_153.png)<br>
 
 ```
-www_authenticate_uri = http://192.168.56.101:5000/
-auth_url = http://192.168.56.101:5000/
-memcached_servers = 192.168.56.101:11211
+www_authenticate_uri = http://controller:5000/
+auth_url = http://controller:5000/
+memcached_servers = controller:11211
 auth_type = password
 project_domain_name = Default
 user_domain_name = Default
@@ -174,7 +174,7 @@ VNC 프록시 클라이언트는 VNC 서버와 VNC 클라이언트 <br>사이에
 
 ![img](../Img/openstack_155.png)<br>
 
-> api_servers = http://192.168.56.101:9292
+> api_servers = http://controller:9292
 
 [glance] 섹션에서<br>
 이미지 관리 서비스인 glance의 서버 주소를 설정한다.
@@ -216,7 +216,7 @@ project_domain_name = Default
 project_name = service
 auth_type = password
 user_domain_name = Default
-auth_url = http://192.168.56.101:5000/v3
+auth_url = http://controller:5000/v3
 username = placement
 password = placementpass
 ```
@@ -302,7 +302,7 @@ VM을 통해 가상 머신 인스턴스를 생성하고 관리하는 데몬(KVM,
 
 ```
 my_ip = 192.168.56.102
-transport_url = rabbit://openstack:rabbitpass@192.168.56.101
+transport_url = rabbit://openstack:rabbitpass@controller
 ```
 
 ![img](../Img/openstack_189.png)<br>
@@ -311,14 +311,14 @@ transport_url = rabbit://openstack:rabbitpass@192.168.56.101
 
 ![img](../Img/openstack_190.png)<br>
 
-> api_servers = http://192.168.56.101:9292
+> api_servers = http://controller:9292
 
 ![img](../Img/openstack_191.png)<br>
 
 ```
-www_authenticate_uri = http://192.168.56.101:5000/
-auth_url = http://192.168.56.101:5000/
-memcached_servers = 192.168.56.101:11211
+www_authenticate_uri = http://controller:5000/
+auth_url = http://controller:5000/
+memcached_servers = controller:11211
 auth_type = password
 project_domain_name = Default
 user_domain_name = Default
@@ -339,7 +339,7 @@ project_domain_name = Default
 project_name = service
 auth_type = password
 user_domain_name = Default
-auth_url = http://192.168.56.101:5000/v3
+auth_url = http://controller:5000/v3
 username = placement
 password = placementpass
 ```
@@ -349,15 +349,15 @@ password = placementpass
 ```
 enabled = true
 server_listen = 0.0.0.0
-server_proxyclient_address = 192.168.56.102
-novncproxy_base_url = http://192.168.56.101:6080/vnc_auto.html
+server_proxyclient_address = $my_ip
+novncproxy_base_url = http://controller:6080/vnc_auto.html
 ```
 
 ![img](../Img/openstack_195.png)<br>
 
 ```
 send_service_user_token = true
-auth_url = https://192.168.56.101/identity
+auth_url = https://controller/identity
 auth_strategy = keystone
 auth_type = password
 project_domain_name = Default
@@ -371,6 +371,7 @@ password = novapass
 
 ![img](../Img/openstack_197.png)<br>
 
+> vi /etc/nova/nova-compute.conf<br>
 > virt_type = qemu
 
 ![img](../Img/openstack_198.png)<br>
