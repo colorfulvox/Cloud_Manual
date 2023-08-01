@@ -80,4 +80,6 @@
 
 ## [VMware](Data/Document/VMware.md)
 
+(1) [VMware Workstation 설치](Data/Document/VMware%20Workstation.md)
+
 ## [Linux 팁](Data/Document/Linux.md)
