@@ -78,4 +78,6 @@
 - [이미지 등록](Data/Document/openstack_oper_image.md)
 - [인스턴스 생성](Data/Document/openstack_oper_instance.md)
 
+## [VMware](Data/Document/VMware.md)
+
 ## [Linux 팁](Data/Document/Linux.md)
