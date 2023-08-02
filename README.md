@@ -80,6 +80,7 @@
 
 ## [VMware](Data/Document/VMware.md)
 
-(1) [VMware Workstation 설치](Data/Document/VMware%20Workstation.md)
+(1) [VMware Workstation (Pro) 설치](Data/Document/VMware%20Workstation.md)<br>
+(2) [ESXi 설치](Data/Document/ESXi%20설치.md)<br>
 
 ## [Linux 팁](Data/Document/Linux.md)
