@@ -54,7 +54,6 @@ Next 클릭<br>
 VMware Workstation은 Player, Pro 버전이 있다.<br>
 
 ![img](../Img/vmware14.png)<br>
-
 다음과 같이 Player는 무료 버전을 제공하지만 상업용으로 쓰려면 라이센스가 필요하다.<br>
 Pro는 시리얼 키를 등록하거나 평가판(30일 무료)으로 사용 가능하다.<br>
 
@@ -87,4 +86,4 @@ Pro가 더 좋아보인다.<br>
 ![img](../Img/vmware20.png)<br>
 실행 화면이다.<br>
 
-### 다음 파트에서 ESXi를 설치한다.<br>
+### 다음 파트에서 ESXi를 설치 및 환경을 구성한다.
