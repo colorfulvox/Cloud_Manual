@@ -82,5 +82,6 @@
 
 (1) [VMware Workstation (Pro) 설치](Data/Document/VMware%20Workstation.md)<br>
 (2) [ESXi 설치](Data/Document/ESXi%20설치.md)<br>
+(3) [우분투 VM 생성]
 
 ## [Linux 팁](Data/Document/Linux.md)

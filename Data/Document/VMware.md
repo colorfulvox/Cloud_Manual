@@ -91,3 +91,5 @@ vSphere를 설치한다는 뜻은 결국 ESXi, vCenter를 설치한다고 생각
 VMware Workstation을 활용해 vSphere을 설치한다.
 
 ## [VMware Workstation 설치](./VMware%20Workstation.md)
+
+## [ESXi 설치](./ESXi%20설치.md)
