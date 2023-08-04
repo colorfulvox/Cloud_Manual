@@ -93,3 +93,5 @@ VMware Workstation을 활용해 vSphere을 설치한다.
 ## [VMware Workstation 설치](./VMware%20Workstation.md)
 
 ## [ESXi 설치](./ESXi%20설치.md)
+
+## [데이터스토어 설정 및 우분투 VM 생성](./ESXi-우분투%20VM생성.md)
