@@ -83,6 +83,7 @@
 (1) [VMware Workstation (Pro) 설치](Data/Document/VMware%20Workstation.md)<br>
 (2) [ESXi 설치](Data/Document/ESXi%20설치.md)<br>
 (3) [데이터스토어 설정 및 우분투 VM 생성](Data/Document/ESXi-우분투%20VM생성.md)<br>
-(4) [ESXi 계정 관리]
+(4) [ESXi 계정 관리](Data/Document/ESXi-계정관리.md)<br>
+(5) [CLI 명령을 통한 VM 관리](Data/Document/ESXi-CLI%20VM%20관리.md)
 
 ## [Linux 팁](Data/Document/Linux.md)
