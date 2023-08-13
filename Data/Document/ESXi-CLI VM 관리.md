@@ -152,8 +152,8 @@ MAC주소를 자동으로 생성한다.
 
 > ethernet0.wakeOnPcktRcv = "FALSE"
 
-Wake-on-LAN은 전원이 꺼져도 네트워크 패킷을 수신하여 컴퓨터를 원격으로 켤 수 있는 기능이다.<br
-여기서는 비활성한다.<br
+Wake-on-LAN은 전원이 꺼져도 네트워크 패킷을 수신하여 컴퓨터를 원격으로 켤 수 있는 기능이다.<br>
+여기서는 비활성한다.<br>
 
 > ethernet0.uptCompatibility = "TRUE"
 
