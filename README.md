@@ -85,7 +85,7 @@
 (3) [데이터스토어 설정 및 우분투 VM 생성](Data/Document/ESXi-우분투%20VM생성.md)<br>
 (4) [ESXi 계정 관리](Data/Document/ESXi-계정관리.md)<br>
 (5) [CLI 명령을 통한 VM 관리](Data/Document/ESXi-CLI%20VM%20관리.md)<br>
-(6) [vCenter 설치 및 ESXi 연동]<br>
+(6) [vCenter 설치 및 ESXi 연동](Data/Document/vCenter%20설치%20및%20ESXi%20연동.md)<br>
 (7) [vCenter VM 생성]
 
 ## [Linux 팁](Data/Document/Linux.md)

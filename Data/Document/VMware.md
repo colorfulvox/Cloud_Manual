@@ -99,3 +99,5 @@ VMware Workstation을 활용해 vSphere을 설치한다.
 ## [ESXi 계정 관리](./ESXi-계정관리.md)
 
 ## [CLI 명령을 통한 VM 관리](./ESXi-CLI%20VM%20관리.md)
+
+## [vCenter 설치 및 ESXi 연동](./vCenter%20설치%20및%20ESXi%20연동.md)
