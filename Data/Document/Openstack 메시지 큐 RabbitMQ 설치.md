@@ -4,7 +4,7 @@
 
 Openstack은 OS가 프로세스를 처리할때 스케줄링을 하는것처럼
 모든 명령어를 스케줄링한다.<br>
-그리고 스케줄링을 담당하는 RabbitMQ는 Openstack의 기본 메시지 큐 서비스이다.<br>
+그리고 스케줄링과 각 서비스간의 통신 도구인 RabbitMQ는 Openstack의 기본 메시지 큐 서비스이다.<br>
 
 ## 환경
 
