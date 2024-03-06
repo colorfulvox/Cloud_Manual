@@ -78,6 +78,8 @@
 - [이미지 등록](Data/Document/openstack_oper_image.md)
 - [인스턴스 생성](Data/Document/openstack_oper_instance.md)
 
+(6) Kolla Ansible
+
 ## [VMware](Data/Document/VMware.md)
 
 (1) [VMware Workstation (Pro) 설치](Data/Document/VMware%20Workstation.md)<br>
