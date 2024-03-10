@@ -79,7 +79,7 @@
 - [인스턴스 생성](Data/Document/openstack_oper_instance.md)
 
 (6) Kolla Ansible
-- [기본적인 구축](Data/Document/kolla_ansible.md)
+- [기본 환경 구성](Data/Document/kolla_ansible.md)
 
 ## [VMware](Data/Document/VMware.md)
 
