@@ -188,7 +188,7 @@ enable_haproxy: "no"
 ----
 설치를 진행하기전에 만약 오류가 발생하면,<br>
 ```
-kolla-ansible destroy -i all-in-one --yes-i-really-really-mean-it
+kolla-ansible destroy -i /etc/kolla/all-in-one --yes-i-really-really-mean-it
 ```
 해당 명령어로 설치 모듈을 삭제한뒤, 재부팅하여 진행하자.<br>
 
