@@ -79,7 +79,10 @@
 - [인스턴스 생성](Data/Document/openstack_oper_instance.md)
 
 (6) Kolla Ansible
-- [기본 환경 구성](Data/Document/kolla_ansible.md)
+- [All-in-one](Data/Document/kolla_ansible.md)
+- [Multinode](data/Document/kolla-ansible_multinode.md)
+
+(7) Python SDK 활용
 
 ## [VMware](Data/Document/VMware.md)
 
@@ -90,5 +93,10 @@
 (5) [CLI 명령을 통한 VM 관리](Data/Document/ESXi-CLI%20VM%20관리.md)<br>
 (6) [vCenter 설치 및 ESXi 연동](Data/Document/vCenter%20설치%20및%20ESXi%20연동.md)<br>
 (7) [vCenter VM 생성](Data/Document/vCenter%20VM%20생성.md)
+
+## IaC - Ansible
+(1) [환경 구성 및 설치](Data/Document/ansible%20환경%20구성%20및%20설치.md)
+
+
 
 ## [Linux 팁](Data/Document/Linux.md)
