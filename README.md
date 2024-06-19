@@ -80,7 +80,7 @@
 
 (6) Kolla Ansible
 - [All-in-one](Data/Document/kolla_ansible.md)
-- [Multinode](data/Document/kolla-ansible_multinode.md)
+- [Multinode](Data/Document/kolla-ansible_multinode.md)
 
 (7) Python SDK 활용
 
