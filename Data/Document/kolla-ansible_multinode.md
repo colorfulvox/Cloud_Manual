@@ -414,7 +414,14 @@ MultiNode 인벤토리에 필요한 도커 이미지를 가져온다.
 
 > kolla-ansible -i ./multinode deploy
 
-배포를 진행한다. 기도하자.
+##### 배포를 진행한다. 기도하자.
+
+배포를 실패하면 오류 사항을 구글링해서 수정한뒤)
+> kolla-ansible destroy -i ./multinode --include-images --yes-i-really-really-mean-it
+
+> kolla-ansible prune-images -i ./multinode --yes-i-really-really-mean-it
+
+배포를 해제하고 다시 진행한다.
 
 ### 8. 결과
 
